@@ -6,7 +6,7 @@ Which procedures have the greatest variability between hospitals?
 
 My results for top 10 measures with the greatest variability:
 
-Measure	Var		StDev	Mean	Measure Name
+Measure	Var     StDev	Mean	Measure Name
 -------	-------	-----	------	------------------------
 ED_1b	8617.74	92.83	271.61	Median Time from ED Arrival to ED Departure for Admitted ED Patients
 ED_2b	3864.69	62.17	98.52	Admit Decision Time to ED Departure Time for Admitted Patients
