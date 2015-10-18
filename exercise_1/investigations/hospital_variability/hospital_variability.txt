@@ -29,8 +29,10 @@ Some are based on the amount of time, where others are based on a 100-pt scale.
 So let's look at these two types of measures separately.
 
 For those measures that are given a score based on time, we get the following top measures:
-Measure	Var		StDev	Mean	Measure Name
--------	------	-----	------	------------------------
+(Var = Variance)
+
+Measure	Var     StDev	Mean	Measure Name
+-------	-------	-----	------	------------------------
 ED_1b	8617.74	92.83	271.61	Median Time from ED Arrival to ED Departure for Admitted ED Patients
 ED_2b	3864.69	62.17	98.52	Admit Decision Time to ED Departure Time for Admitted Patients
 OP_18b	1656.55	40.7	142.77	Median Time from ED Arrival to ED Departure for Discharged ED Patients
@@ -44,9 +46,10 @@ There is large variability in the scores based on time, with the median time for
 having the greatest variance. 
 
 And for those measures that are scored out of 100, these are the top 10 measures:
+(Var = Variance)
 
-Measure	Var		StDev	Mean	Measure Name
--------	------	-----	------	------------------------
+Measure	Var     StDev	Mean	Measure Name
+-------	-------	-----	------	------------------------
 STK_4	481.99	21.95	82.9	Thrombolytic Therapy
 OP_23	477.19	21.84	66.71	Head CT Scan Results for Acute Ischemic Stroke or Hemorrhagic Stroke Patients who Received Head CT or MRI Scan Interpretation Within 45 Minutes of ED Arrival
 AMI_7a	352.67	18.78	50.0	Fibrinolytic Therapy Received within 30 Minutes of Hospital Arrival
