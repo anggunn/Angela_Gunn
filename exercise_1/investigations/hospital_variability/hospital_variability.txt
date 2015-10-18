@@ -5,6 +5,7 @@ The Question:
 Which procedures have the greatest variability between hospitals?
 
 My results for top 10 measures with the greatest variability:
+(Var = Variance)
 
 Measure	Var     StDev	Mean	Measure Name
 -------	-------	-----	------	------------------------
