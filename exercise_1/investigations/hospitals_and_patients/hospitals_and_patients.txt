@@ -4,8 +4,9 @@ Hospitals and Patients
 The Question: 
 Are average scores for hospital quality or procedural variability correlated with patient survey responses?
 
+(note - this isn't really a top-10 type question, so the answer is a bit longer).
 
-When you add in the hospital survey information, we now have two ways to rank hospitals: 
+We have two ways to rank hospitals: 
 by procedure score and by survey score.
 
 We already looked at ranking hospitals by procedure score, so let's focus on survey score.
@@ -16,7 +17,7 @@ a patient experience score out of 100 points, where 100 is perfect scores.
 I present here the 23 hospitals that received a perfect score (100/100).
 (S_Rank = Survey Rank)
 
-ID		S_Rank	Hospital Name
+ID      S_Rank  Hospital Name
 ------	------	--------------------------------------
 040152	1		PHYSICIANS' SPECIALTY HOSPITAL
 360352	1		SURGICAL HOSPITAL AT SOUTHWOODS
