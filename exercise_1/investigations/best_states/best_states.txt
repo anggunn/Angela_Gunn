@@ -7,9 +7,9 @@ What states are models of high-quality care?
 
 The below table shows my findings for the top 10 states:
 
-State 	Mean	StDev
------	------	------
-WI		13.39	10.7
+State Mean	StDev
+----- ------	------
+WI    13.39	10.7
 CO		14.22	10.03
 UT		14.39	12.76
 ME		17.09	13.51
