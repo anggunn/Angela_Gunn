@@ -1,0 +1,90 @@
+***********************
+Hospitals and Patients
+***********************
+The Question: 
+Are average scores for hospital quality or procedural variability correlated with patient survey responses?
+
+
+When you add in the hospital survey information, we now have two ways to rank hospitals: 
+by procedure score and by survey score.
+
+We already looked at ranking hospitals by procedure score, so let's focus on survey score.
+
+The surveys have a two values, base score and consistency score. These values are added together to get
+a patient experience score out of 100 points, where 100 is perfect scores.
+
+I present here the 23 hospitals that received a perfect score (100/100).
+(S_Rank = Survey Rank)
+
+ID		S_Rank	Hospital Name
+------	------	--------------------------------------
+040152	1		PHYSICIANS' SPECIALTY HOSPITAL
+360352	1		SURGICAL HOSPITAL AT SOUTHWOODS
+110200	1		NORTHSIDE MEDICAL CENTER
+190259	1		LAFAYETTE SURGICAL SPECIALTY HOSPITAL
+390324	1		PHYSICIAN'S CARE SURGICAL HOSPITAL
+450422	1		BAYLOR MEDICAL CENTER AT UPTOWN
+280131	1		MIDWEST SURGICAL HOSPITAL LLC
+180149	1		WESTLAKE REGIONAL HOSPITAL
+010045	1		FAYETTE MEDICAL CENTER
+520194	1		ORTHOPAEDIC HOSPITAL OF WISCONSIN
+430091	1		BLACK HILLS SURGICAL HOSPITAL LLP
+190241	1		PHYSICIANS MEDICAL CENTER
+450834	1		PHYSICIANS CENTRE,THE
+670049	1		NORTH CENTRAL SURGICAL CENTER LLP
+430092	1		DAKOTA PLAINS SURGICAL CENTER LLP
+450875	1		QUAIL CREEK SURGICAL HOSPITAL
+190261	1		OUACHITA COMMUNITY HOSPITAL
+390316	1		SURGICAL INSTITUTE OF READING
+190263	1		HEART HOSPITAL OF LAFAYETTE
+190267	1		FAIRWAY MEDICAL CENTER
+100313	1		SACRED HEART HOSPITAL ON THE GULF
+170190	1		MANHATTAN SURGICAL HOSPITAL LLC
+390323	1		ADVANCED SURGICAL HOSPITAL
+
+Since we only looked at hospitals with 45 or more measures when ranking hospitals (hospital_prime),
+we should limit the survey responses to just those hospitals that are in that same set.
+
+Here is the new top 10 for hospital survey rankings using just the hospitals in hospital_prime:
+(S_Rank = Survey Rank,
+Base = Base_Score, Consis = Consistency Score)
+
+ID		S_Rank	Base	Consis	Hospital Name
+------	------	------	----	--------------------------------------
+370215	1		78		20		OKLAHOMA HEART HOSPITAL
+450604	2		77		20		HILL COUNTRY MEMORIAL HOSPITAL INC
+370234	3		74		20		OKLAHOMA HEART HOSPITAL SOUTH
+180044	4		70		20		PIKEVILLE MEDICAL CENTER
+200020	4		70		20		YORK HOSPITAL
+410008	6		69		20		SOUTH COUNTY HOSPITAL INC
+340115	7		68		20		FIRSTHEALTH MOORE REGIONAL HOSPITAL
+340145	8		67		20		CAROLINAS HEALTHCARE SYSTEM LINCOLN
+140101	8		67		20		MORRIS HOSPITAL & HEALTHCARE CENTERS
+110011	8		67		20		TANNER MEDICAL CENTER - CARROLLTON
+
+
+Now, if we look at the 10 top hospitals we saw before, this is how they rank on the surveys:
+(P_Rank = Procedure Rank, S_Rank = Survey Rank,
+Base = Base_Score, Consis = Consistency Score)
+
+ID		P_Rank	S_Rank	Base	Consis	Hospital Name
+------	------	------	----	------	--------------------------------------
+390138	1		540		30		18		WAYNESBORO HOSPITAL
+050424	2		223		39		20		SCRIPPS GREEN HOSPITAL
+170197	3		223		39		20		KANSAS MEDICAL CENTER LLC
+420065	4		180		41		20		BON SECOURS-ST FRANCIS XAVIER HOSPITAL
+450822	5		1225	14		18		LAS COLINAS MEDICAL CENTER
+230072	6		348		34		20		HOLLAND COMMUNITY HOSPITAL
+100267	7		2000	0		15		ENGLEWOOD COMMUNITY HOSPITAL
+100252	8		1265	14		17		RAULERSON HOSPITAL
+450662	9		1561	11		14		VALLEY REGIONAL MEDICAL CENTER
+260006	10		318		35		20		HEARTLAND REGIONAL MEDICAL CENTER
+
+
+We can see none of the hospitals in our top 10 are given perfect scores
+in the patient experience scores. In fact, the highest ranking survey score of this group is 180, 
+and one has a survey rank of 2000 (out of 2179).
+
+The Pearson's Correlation for the two ranks (procedure rank and survey rank) is 0.21
+This means the two rankings are weakly correlated. 
+

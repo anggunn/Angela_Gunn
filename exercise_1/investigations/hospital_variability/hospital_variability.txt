@@ -1,0 +1,61 @@
+********************
+Hospital Variability
+********************
+The Question: 
+Which procedures have the greatest variability between hospitals?
+
+My results for top 10 measures with the greatest variability:
+
+Measure	Var		StDev	Mean	Measure Name
+-------	-------	-----	------	------------------------
+ED_1b	8617.74	92.83	271.61	Median Time from ED Arrival to ED Departure for Admitted ED Patients
+ED_2b	3864.69	62.17	98.52	Admit Decision Time to ED Departure Time for Admitted Patients
+OP_18b	1656.55	40.7	142.77	Median Time from ED Arrival to ED Departure for Discharged ED Patients
+OP_3b	869.03	29.48	60.75	Median Time to Transfer to Another Facility for Acute Coronary Intervention- Reporting Rate
+STK_4	481.99	21.95	82.9	Thrombolytic Therapy
+OP_23	477.19	21.84	66.71	Head CT Scan Results for Acute Ischemic Stroke or Hemorrhagic Stroke Patients who Received Head CT or MRI Scan Interpretation Within 45 Minutes of ED Arrival
+AMI_7a	352.67	18.78	50.0	Fibrinolytic Therapy Received within 30 Minutes of Hospital Arrival
+OP_2	325.75	18.05	70.25	Fibrinolytic Therapy Received Within 30 Minutes of ED Arrival
+OP_21	314.08	17.72	55.36	Median Time to Pain Management for Long Bone Fracture
+OP_20	285.0	16.88	28.08	Median Time from ED Arrival to Provider Contact for ED patients
+
+
+
+For this, I just took the variance, standard deviation and mean of each of the measures,
+and sorted on the variance. However, if you look at these variables, they are very different in how they are measured. 
+Some are based on the amount of time, where others are based on a 100-pt scale.
+
+So let's look at these two types of measures separately.
+
+For those measures that are given a score based on time, we get the following top measures:
+Measure	Var		StDev	Mean	Measure Name
+-------	------	-----	------	------------------------
+ED_1b	8617.74	92.83	271.61	Median Time from ED Arrival to ED Departure for Admitted ED Patients
+ED_2b	3864.69	62.17	98.52	Admit Decision Time to ED Departure Time for Admitted Patients
+OP_18b	1656.55	40.7	142.77	Median Time from ED Arrival to ED Departure for Discharged ED Patients
+OP_3b	869.03	29.48	60.75	Median Time to Transfer to Another Facility for Acute Coronary Intervention- Reporting Rate
+OP_21	314.08	17.72	55.36	Median Time to Pain Management for Long Bone Fracture
+OP_20	285.0	16.88	28.08	Median Time from ED Arrival to Provider Contact for ED patients
+OP_1	57.21	7.56	26.0	Median Time to Fibrinolysis
+OP_5	37.32	6.11	8.33	Median Time to ECG
+
+There is large variability in the scores based on time, with the median time for arrival to departure 
+having the greatest variance. 
+
+And for those measures that are scored out of 100, these are the top 10 measures:
+
+Measure	Var		StDev	Mean	Measure Name
+-------	------	-----	------	------------------------
+STK_4	481.99	21.95	82.9	Thrombolytic Therapy
+OP_23	477.19	21.84	66.71	Head CT Scan Results for Acute Ischemic Stroke or Hemorrhagic Stroke Patients who Received Head CT or MRI Scan Interpretation Within 45 Minutes of ED Arrival
+AMI_7a	352.67	18.78	50.0	Fibrinolytic Therapy Received within 30 Minutes of Hospital Arrival
+OP_2	325.75	18.05	70.25	Fibrinolytic Therapy Received Within 30 Minutes of ED Arrival
+VTE_5	265.79	16.3	88.88	Venous Thromboembolism Warfarin Therapy Discharge Instructions
+VTE_1	232.79	15.26	89.11	Venous Thromboembolism Prophylaxis
+STK_8	196.37	14.01	90.54	Stroke Education
+CAC_3	161.78	12.72	89.38	Home Management Plan of Care (HMPC) Document Given to Patient/Caregiver
+IMM_2	142.68	11.94	91.75	Influenza Immunization
+HF_1	139.9	11.83	93.61	Discharge Instructions
+
+We can see Thrombolytic Therapy is the measure here with the greatest variance, with a mean 
+of 82.9 and a standard deviation of 21.95.

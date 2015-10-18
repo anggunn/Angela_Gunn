@@ -1,5 +1,8 @@
 --create a table based on the stage_effective_care and stage_readmissions
 --unioned together to create one table;
+--named Procedures (plural) because Procedure is a reserved word.
+
+--scores that are text base are stored as NULL
 
 DROP TABLE Procedures;
 

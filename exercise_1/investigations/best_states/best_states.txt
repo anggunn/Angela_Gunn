@@ -1,0 +1,54 @@
+***********
+Best States
+***********
+The Question: 
+What states are models of high-quality care?
+
+
+The below table shows my findings for the top 10 states:
+
+State 	Mean	StDev
+-----	------	------
+WI		13.39	10.7
+CO		14.22	10.03
+UT		14.39	12.76
+ME		17.09	13.51
+SD		17.83	17.26
+NH		18.17	14.15
+IN		18.3	8.56
+HI		19.39	12.16
+FL		20.57	15.36
+NE		21.09	15.67
+
+
+
+It would be easy to say the state with the most "best hospitals" should be the best state, but
+we need to consider each state has a different number of hospitals, partly driven by the 
+state's population.
+
+A state with 3 hospitals may all be top ranked, but a state with 10 hospitals 
+may have 3 top ranked hospitals but 7 average or lower ranked hospitals.
+
+A state typically imposes different policies on all of its hospitals, so regardless 
+if a hospital has one or many measures, it in theory is following the policies established
+by the state on that particular procedure. For this reason, instead of filtering out hospitals,
+I filter out measures that are most frequently used. There are around 60 measures that are
+actually used in the Procedures table. I select the 30 most frequently used measures, storing 
+them in the view Measures_Prime.
+
+The approach is to roll up all the measure scores from within-state hospitals 
+and average them to make one measure score for the full state. To do this, I start the
+same way I did for hospitals in that I find the rank of the measure scores across all scores 
+for that measure. I then average the ranks for measures in the same state to get one row 
+per state-measure combination, representing the average rank placement for that measure.
+
+Then I re-rank everything to see the ranks between states. So now if I take my view, I can 
+see how a particular state ranks compared to other states on the same measure (the value
+here is between 1 and 51, with 1 being the best value).
+
+I then calculate the mean and standard deviation for each state, and present the ten states
+with the highest average rank.
+
+
+
+

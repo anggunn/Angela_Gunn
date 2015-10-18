@@ -1,10 +1,11 @@
 #!/bin/bash
 # load data
 
+rm -R hospital_data
 mkdir hospital_data
 cd hospital_data
 
-wget -O Hospital_Revised_Flatfiles.zip https://data.medicare.gov/views/bg9k-emty/files/Nqcy71p9Ss2RSBWDmP77H1DQXcyacr2khotGbDHHW_s?content_type=application%2Fzip%3B%20charset%3Dbinary&filename=Hospital_Revised_Flatfiles.zip
+wget -O Hospital_Revised_Flatfiles.zip "https://data.medicare.gov/views/bg9k-emty/files/Nqcy71p9Ss2RSBWDmP77H1DQXcyacr2khotGbDHHW_s?content_type=application%2Fzip%3B%20charset%3Dbinary&filename=Hospital_Revised_Flatfiles.zip"
 
 # unzip required files
 unzip Hospital_Revised_Flatfiles.zip "Hospital General Information.csv"
@@ -33,12 +34,12 @@ hdfs dfs -mkdir /user/w205/hospital_compare
 
 # put files there
 hdfs dfs -mkdir /user/w205/hospital_compare/stage_hospitals
-hdfs dfs -put /data/hospital_compare/data/stage_hospitals.csv /user/w205/hospital_compare/stage_hospitals/
+hdfs dfs -put /data/hospital_compare/loading_and_modeling/hospital_data/stage_hospitals.csv /user/w205/hospital_compare/stage_hospitals/
 hdfs dfs -mkdir /user/w205/hospital_compare/stage_effective_care
-hdfs dfs -put /data/hospital_compare/data/stage_effective_care.csv /user/w205/hospital_compare/stage_effective_care/
+hdfs dfs -put /data/hospital_compare/loading_and_modeling/hospital_data/stage_effective_care.csv /user/w205/hospital_compare/stage_effective_care/
 hdfs dfs -mkdir /user/w205/hospital_compare/stage_readmissions
-hdfs dfs -put /data/hospital_compare/data/stage_readmissions.csv /user/w205/hospital_compare/stage_readmissions/
+hdfs dfs -put /data/hospital_compare/loading_and_modeling/hospital_data/stage_readmissions.csv /user/w205/hospital_compare/stage_readmissions/
 hdfs dfs -mkdir /user/w205/hospital_compare/stage_measure_dates
-hdfs dfs -put /data/hospital_compare/data/stage_measure_dates.csv /user/w205/hospital_compare/stage_measure_dates/
+hdfs dfs -put /data/hospital_compare/loading_and_modeling/hospital_data/stage_measure_dates.csv /user/w205/hospital_compare/stage_measure_dates/
 hdfs dfs -mkdir /user/w205/hospital_compare/stage_survey_responses
-hdfs dfs -put /data/hospital_compare/data/stage_surveys_responses.csv /user/w205/hospital_compare/stage_survey_responses/
+hdfs dfs -put /data/hospital_compare/loading_and_modeling/hospital_data/stage_surveys_responses.csv /user/w205/hospital_compare/stage_survey_responses/
