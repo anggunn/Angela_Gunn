@@ -1,5 +1,6 @@
 --this script returns the variance between measure scores.			
 
+--Sript to return the top 10 hospitals by procedure score
 SELECT P.measure_id, 
 ROUND(VARIANCE(score),2) as score_var,
 ROUND(stddev_pop(score),2) as score_stddev,
@@ -12,7 +13,7 @@ GROUP BY P.measure_id, M.measure_name
 order by score_var desc
 LIMIT 10;
 
-
+-- return just those based on time
 SELECT P.measure_id, 
 ROUND(VARIANCE(score),2) as score_var,
 ROUND(stddev_pop(score),2) as score_stddev,
@@ -26,6 +27,7 @@ GROUP BY P.measure_id, M.measure_name
 order by score_var desc 
 LIMIT 10;
 
+-- return just those not based on time
 SELECT P.measure_id, 
 ROUND(VARIANCE(score),2) as score_var,
 ROUND(stddev_pop(score),2) as score_stddev,
