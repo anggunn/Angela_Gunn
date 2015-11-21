@@ -3,7 +3,7 @@ import sys
 import datetime
 import string
 
-####2009 File####
+####2009 Accident
 
 
 
@@ -11,31 +11,39 @@ import string
 #INPUT - the value from query
 #OUTPUT - string description
 def FirstHarm_to_String(tmpValue): 
-	tmpEvent = int(tmpValue)
+	try:
+		tmpEvent = int(tmpValue)
+	except:
+		tmpEvent = 100
+		
 	
 	non_Collision = [1,2,3,4,5,6,7,8,9,10]
 	col_not_fixed = [21,22,23,24,25,26,27,47,28,29]
 	col_fixed = [31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,58,59]
 	col_VinTrans = []
-	unknown = [99]
+	unknown = [99,100]
 	
 	if tmpEvent in non_Collision: return 'Non-Collision'
 	if tmpEvent in col_not_fixed: return 'Collision - Object Not Fixed'
 	if tmpEvent in col_fixed: return 'Collision - Object Fixed'
 	if tmpEvent in col_VinTrans: return 'Collisiion - Vehicle in Transport'
 	if tmpEvent in unknown: return 'Unknown'
-	return ''
+	return 'NA'
 #end FirstHarm_to_String
 
 #FUNCTION WithinInterchange_to_String
 #INPUT - the value from query
 #OUTPUT - string description
 def WithinInterchange_to_String(tmpValue): 
-	tmpEvent = int(tmpValue)
+	try:
+		tmpEvent = int(tmpValue)
+	except:
+		tmpEvent = 100
+		
 	
 	no = [0,1,2,3,4,5,6,7,8,9]
 	yes = [10,11,12,13,14,16,17,18,19]
-	unknown = [99]
+	unknown = [99,100]
 	
 	if tmpEvent in no: return 'No'
 	if tmpEvent in yes: return 'Yes'
@@ -48,7 +56,11 @@ def WithinInterchange_to_String(tmpValue):
 #INPUT - the value from query
 #OUTPUT - string description
 def RelationJunction_to_String(tmpValue): 
-	tmpEvent = int(tmpValue)
+	try:
+		tmpEvent = int(tmpValue)
+	except:
+		tmpEvent = 100
+		
 	
 	nonJunct = [0,10]
 	intersection = [1,11]
@@ -59,7 +71,7 @@ def RelationJunction_to_String(tmpValue):
 	crossover = [6,16,7,17]
 	through = [8]
 	other = [18]
-	unknown = [9,19,99]
+	unknown = [9,19,99,100]
 	
 	if tmpEvent in nonJunct: return 'Non-Junction'
 	if tmpEvent in intersection: return 'Intersection'
@@ -182,7 +194,7 @@ for line in sys.stdin:
 		
 	#Within_Interchange
 	#BASED ON RELATION TO JUCTION
-	output.append(WithinInterchange_to_String(tokens[13]))
+	output.append(WithinInterchange_to_String(tokens[14]))
 		
 	#Relation_to_Junction
 	output.append(RelationJunction_to_String(tokens[14]))
@@ -203,10 +215,11 @@ for line in sys.stdin:
 	except:
 		output.append('NA')
 	#Work_Zone
-	WorkZone2String = {0: 'No',
+	WorkZone2String = {'0': 'No',
 		'1': 'Yes',
 		'2': 'Yes',
-		'3': 'Yes'}
+		'3': 'Yes',
+		'4': 'Yes'}
 	try:
 		output.append(WorkZone2String[tokens[16]])
 	except:

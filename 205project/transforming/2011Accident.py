@@ -3,13 +3,17 @@ import sys
 import datetime
 import string
 
-####2011 File####
+####2011 Accident
 
 #FUNCTION FirstHarm_to_String
 #INPUT - the value from query
 #OUTPUT - string description
 def FirstHarm_to_String(tmpValue): 
-	tmpEvent = int(tmpValue)
+	try:
+		tmpEvent = int(tmpValue)
+	except:
+		tmpEvent = 100
+		
 	
 	non_Collision = [1,2,3,4,51,44,7,16,6,72,73,5]
 	col_not_fixed = [8,9,10,11,49,15,18,14,45]
@@ -22,7 +26,7 @@ def FirstHarm_to_String(tmpValue):
 	if tmpEvent in col_fixed: return 'Collision - Object Fixed'
 	if tmpEvent in col_VinTrans: return 'Collisiion - Vehicle in Transport'
 	if tmpEvent in unknown: return 'Unknown'
-	return ''
+	return 'NA'
 #end FirstHarm_to_String
 
 
@@ -120,6 +124,7 @@ for line in sys.stdin:
 		'5': 'Entrance or Exit Ramp Related',
 		'6': 'Railway Grade Crossing',
 		'7': 'Crossover Related',
+		'8': 'Driveway Access Related',
 		'16': 'Shared-Use Path or Trail',
 		'17': 'Acceleration or Deceleration Lane',
 		'18': 'Through Roadway',
@@ -145,10 +150,11 @@ for line in sys.stdin:
 	except:
 		output.append('NA')
 	#Work_Zone
-	WorkZone2String = {0: 'No',
+	WorkZone2String = {'0': 'No',
 		'1': 'Yes',
 		'2': 'Yes',
 		'3': 'Yes',
+		'4': 'Yes',
 		'8': 'Unknown'}
 	try:
 		output.append(WorkZone2String[tokens[16]])

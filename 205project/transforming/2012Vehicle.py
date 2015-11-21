@@ -3,12 +3,17 @@ import sys
 import datetime
 import string
 
+#2012 Vehicle
 
 #FUNCTION BodyType_to_String
 #INPUT - the value from query
 #OUTPUT - string description
 def BodyType_to_String(tmpValue):
-	tmpEvent = int(tmpValue)
+	try:
+		tmpEvent = int(tmpValue)
+	except:
+		tmpEvent = 100
+		
 	
 	Automobile = [1,2,3,4,5,6,7,17,8,9]
 	Auto_Deriv = [10,11,12,13]
@@ -22,7 +27,7 @@ def BodyType_to_String(tmpValue):
 	Motored_Cycle = [80,81,82,83,88,89,90]
 	Farm_Const = [92,93]
 	Other = [91,94,95,97]
-	unknown = [98,99]
+	unknown = [98,99,100]
 	
 	if tmpEvent in Automobile: return 'Automobile'
 	if tmpEvent in Auto_Deriv: return 'Automobile Derivative'
@@ -45,27 +50,35 @@ def BodyType_to_String(tmpValue):
 #INPUT - the value from query
 #OUTPUT - string description
 def MostHarm_to_String(tmpValue):
-	tmpEvent = int(tmpValue)
+	try:
+		tmpEvent = int(tmpValue)
+	except:
+		tmpEvent = 100
+		
 	
 	non_Collision = [1,2,3,4,51,44,7,16,6,72,73,5]
 	col_not_fixed = [8,9,10,11,49,15,18,14,45]
 	col_fixed = [58,19,20,25,33,35,38,39,40,41,42,17,43,50,21,23,24,52,57,26,59,46,30,31,32,34,48,53]
 	col_VinTrans = [12,54,55]
-	unknown = [99]
+	unknown = [99,100]
 	
 	if tmpEvent in non_Collision: return 'Non-Collision'
 	if tmpEvent in col_not_fixed: return 'Collision - Object Not Fixed'
 	if tmpEvent in col_fixed: return 'Collision - Object Fixed'
 	if tmpEvent in col_VinTrans: return 'Collisiion - Vehicle in Transport'
 	if tmpEvent in unknown: return 'Unknown'
-	return ''
+	return 'NA'
 #end MostHarm_to_String
 
 #FUNCTION CriticalEvent_to_String
 #INPUT - the value from query
 #OUTPUT - string description
 def CriticalEvent_to_String(tmpValue):
-	tmpEvent = int(tmpValue)
+	try:
+		tmpEvent = int(tmpValue)
+	except:
+		tmpEvent = 100
+		
 	
 	LossControl = [1,2,3,4,5,6,8,9]
 	Edge = [10,11,12,13,14]
@@ -78,7 +91,7 @@ def CriticalEvent_to_String(tmpValue):
 	Animal = [87,88,89]
 	Object = [90,91,92]
 	Other = [19,98]
-	unknown = [99]
+	unknown = [99,100]
 	
 	if tmpEvent in LossControl: return 'Vehicle Loss of Control'
 	if tmpEvent in Edge: return 'Vehicle Travelling on Road Edge'

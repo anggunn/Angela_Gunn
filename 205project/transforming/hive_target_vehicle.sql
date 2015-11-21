@@ -1,5 +1,6 @@
 USE accident_project;
 
+DROP TABLE VEHICLE;
 CREATE EXTERNAL TABLE VEHICLE
 (
 case_number varchar(500), 
@@ -110,7 +111,7 @@ add FILE /data/205project/pyscripts/2010Vehicle.py;
 
 insert into table vehicle PARTITION (year = '2010')
 select TRANSFORM(
-CaseNum, vehno, '2010', numoccs, body_typ, MODEL_YR, deformed, V_EVENT,
+CaseNum, VEHNO, '2010', numoccs, body_typ, MODEL_YR, deformed, V_EVENT,
 max_vsev, veh_alch, speedrel, trav_sp, p_crash1, p_crash2) 
 using "python 2010Vehicle.py" 
 as (
