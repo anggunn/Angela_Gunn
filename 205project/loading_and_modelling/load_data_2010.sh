@@ -12,21 +12,15 @@ wget https://s3-us-west-2.amazonaws.com/accident-project/2010/PERSON.TXT
 wget https://s3-us-west-2.amazonaws.com/accident-project/2010/VEHICLE.TXT
 
 
-# unzip required files
-#unzip GES10.zip "TXT/ACCIDENT.TXT"       
-#unzip GES10.zip "TXT/DISTRACT.TXT"        
-#unzip GES10.zip "TXT/PARKED.TXT"          
-#unzip GES10.zip "TXT/PERSON.TXT"      
-#unzip GES10.zip "TXT/VEHICLE.TXT"     
 
 # remove headers
 
-
-tail -n +2  "TXT/ACCIDENT.TXT" > 2010_accident.txt      
-tail -n +2  "TXT/DISTRACT.TXT" > 2010_distract.txt       
-tail -n +2  "TXT/PARKED.TXT" > 2010_parked.txt            
-tail -n +2  "TXT/PERSON.TXT" > 2010_person.txt        
-tail -n +2  "TXT/VEHICLE.TXT" > 2010_vehicle.txt     
+# remove headers
+tail -n +2 "ACCIDENT.TXT" > 2010_accident.txt     
+tail -n +2 "DISTRACT.TXT" > 2010_distract.txt          
+tail -n +2 "PARKWORK.TXT" > 2010_parkwork.txt            
+tail -n +2 "PERSON.TXT" > 2010_person.txt                
+tail -n +2 "VEHICLE.TXT" > 2010_vehicle.txt      
 
 
 # create 2010 directory

@@ -11,13 +11,6 @@ wget https://s3-us-west-2.amazonaws.com/accident-project/2011/PERSON.TXT
 wget https://s3-us-west-2.amazonaws.com/accident-project/2011/VEHICLE.TXT
 
 
-# unzip required files
-#unzip GES11.zip "ACCIDENT.TXT"            
-#unzip GES11.zip "DISTRACT.TXT"           
-#unzip GES11.zip "PARKWORK.TXT"            
-#unzip GES11.zip "PERSON.TXT"              
-#unzip GES11.zip "VEHICLE.TXT"    
-
 
 # remove headers
 tail -n +2 "ACCIDENT.TXT" > 2011_accident.txt     
