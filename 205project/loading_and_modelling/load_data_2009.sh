@@ -2,13 +2,22 @@ cd accident_project/raw_data
 
 #2009
 
+
+
+wget https://s3-us-west-2.amazonaws.com/accident-project/2009/ACCIDENT.TXT
+wget https://s3-us-west-2.amazonaws.com/accident-project/2009/DISTRACT.TXT
+wget https://s3-us-west-2.amazonaws.com/accident-project/2009/PARKED.TXT
+wget https://s3-us-west-2.amazonaws.com/accident-project/2009/PERSON.TXT
+wget https://s3-us-west-2.amazonaws.com/accident-project/2009/VEHICLE.TXT
+
+
+
 # unzip required files
-       
-unzip GES09.zip "ACCIDENT.TXT"        
-unzip GES09.zip "DISTRACT.TXT"    
-unzip GES09.zip "PARKED.TXT"          
-unzip GES09.zip "PERSON.TXT"      
-unzip GES09.zip "VEHICLE.TXT"    
+#unzip GES09.zip "ACCIDENT.TXT"        
+#unzip GES09.zip "DISTRACT.TXT"    
+#unzip GES09.zip "PARKED.TXT"          
+#unzip GES09.zip "PERSON.TXT"      
+#unzip GES09.zip "VEHICLE.TXT"    
 
 # remove headers
    

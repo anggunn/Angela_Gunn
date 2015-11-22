@@ -2,12 +2,19 @@ cd accident_project/raw_data
 
 #2012
 
+
+wget https://s3-us-west-2.amazonaws.com/accident-project/2012/ACCIDENT.TXT
+wget https://s3-us-west-2.amazonaws.com/accident-project/2012/DISTRACT.TXT
+wget https://s3-us-west-2.amazonaws.com/accident-project/2012/PARKWORK.TXT
+wget https://s3-us-west-2.amazonaws.com/accident-project/2012/PERSON.TXT
+wget https://s3-us-west-2.amazonaws.com/accident-project/2012/VEHICLE.TXT
+
 # unzip required files
-unzip GES12.zip "ACCIDENT.TXT" 
-unzip GES12.zip "PERSON.TXT" 
-unzip GES12.zip "DISTRACT.TXT" 
-unzip GES12.zip "PARKWORK.TXT" 
-unzip GES12.zip "VEHICLE.TXT" 
+#unzip GES12.zip "ACCIDENT.TXT" 
+#unzip GES12.zip "PERSON.TXT" 
+#unzip GES12.zip "DISTRACT.TXT" 
+#unzip GES12.zip "PARKWORK.TXT" 
+#unzip GES12.zip "VEHICLE.TXT" 
 
 # remove headers
 tail -n +2 "ACCIDENT.TXT" > 2012_accident.txt

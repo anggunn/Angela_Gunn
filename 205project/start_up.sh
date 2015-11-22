@@ -16,6 +16,8 @@ wget ftp://ftp.nhtsa.dot.gov/GES/GES07/ges2007_flat.zip
 wget ftp://ftp.nhtsa.dot.gov/GES/GES06/ASCII/ges06flat.zip
 wget ftp://ftp.nhtsa.dot.gov/GES/GES05/ASCII/ges05flat.zip
 
+
+#rename the files
 mv GES13_Flatfile.zip GES13.zip
 mv GES12_Flatfile.zip GES12.zip
 mv GES11_Flatfile.zip GES11.zip
@@ -25,3 +27,5 @@ mv GES2008_flat.zip GES08.zip
 mv ges2007_flat.zip GES07.zip
 mv ges06flat.zip GES06.zip
 mv ges05flat.zip GES05.zip
+
+
