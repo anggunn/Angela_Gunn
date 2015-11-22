@@ -18,7 +18,7 @@ wget https://s3-us-west-2.amazonaws.com/accident-project/2010/VEHICLE.TXT
 # remove headers
 tail -n +2 "ACCIDENT.TXT" > 2010_accident.txt     
 tail -n +2 "DISTRACT.TXT" > 2010_distract.txt          
-tail -n +2 "PARKWORK.TXT" > 2010_parkwork.txt            
+tail -n +2 "PARKED.TXT" > 2010_parked.txt            
 tail -n +2 "PERSON.TXT" > 2010_person.txt                
 tail -n +2 "VEHICLE.TXT" > 2010_vehicle.txt      
 
