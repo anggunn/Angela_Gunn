@@ -27,8 +27,18 @@ WITH SERDEPROPERTIES (
 STORED AS TEXTFILE
 LOCATION '/user/w205/accident_project/data/PERSON';
 
-
-add FILE /data/205project/pyscripts/2013Person.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2013Person.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2012Person.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2011Person.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2010Person.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2009Person.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2008Person.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2007Person.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2006Person.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2005Person.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2004Person.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2003Person.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2002Person.py;
 
 insert into table person PARTITION (year = '2013')
 select TRANSFORM(
@@ -55,7 +65,6 @@ striking_vehicle_number int
 FROM accident_project.person_2013;
 
 
-add FILE /data/205project/pyscripts/2012Person.py;
 
 insert into table person PARTITION (year = '2012')
 select TRANSFORM(
@@ -82,7 +91,6 @@ striking_vehicle_number int
 FROM accident_project.person_2012;
 
 
-add FILE /data/205project/pyscripts/2011Person.py;
 
 insert into table person PARTITION (year = '2011')
 select TRANSFORM(
@@ -109,7 +117,6 @@ striking_vehicle_number int
 FROM accident_project.person_2011;
 
 
-add FILE /data/205project/pyscripts/2010Person.py;
 
 insert into table person PARTITION (year = '2010')
 select TRANSFORM(
@@ -136,7 +143,6 @@ striking_vehicle_number int
 FROM accident_project.person_2010;
 
 
-add FILE /data/205project/pyscripts/2009Person.py;
  
 insert into table person PARTITION (year = '2009')
 select TRANSFORM(
@@ -162,12 +168,11 @@ striking_vehicle_number int
 )
 FROM accident_project.person_2009;
 
-add FILE /data/205project/pyscripts/2008Person.py;
  
 insert into table person PARTITION (year = '2008')
 select TRANSFORM(
 casenum, vehno, perno, 2008,
-age, sex, per_typ, inj_sev, seat_pos, rest_sys, 
+age, sex, per_type, inj_sev, seat_pos, rest_sys, 
 per_alch, per_drug, str_veh) 
 using "python 2008Person.py" 
 as (
@@ -188,7 +193,6 @@ striking_vehicle_number int
 )
 FROM accident_project.person_2008;
 
-add FILE /data/205project/pyscripts/2007Person.py;
  
 insert into table person PARTITION (year = '2007')
 select TRANSFORM(
@@ -215,7 +219,6 @@ striking_vehicle_number int
 FROM accident_project.person_2007;
 
 
-add FILE /data/205project/pyscripts/2006Person.py;
  
 insert into table person PARTITION (year = '2006')
 select TRANSFORM(
@@ -242,7 +245,6 @@ striking_vehicle_number int
 FROM accident_project.person_2006;
 
 
-add FILE /data/205project/pyscripts/2005Person.py;
  
 insert into table person PARTITION (year = '2005')
 select TRANSFORM(
@@ -269,7 +271,6 @@ striking_vehicle_number int
 FROM accident_project.person_2005;
 
 
-add FILE /data/205project/pyscripts/2004Person.py;
  
 insert into table person PARTITION (year = '2004')
 select TRANSFORM(
@@ -296,7 +297,6 @@ striking_vehicle_number int
 FROM accident_project.person_2004;
 
 
-add FILE /data/205project/pyscripts/2003Person.py;
  
 insert into table person PARTITION (year = '2003')
 select TRANSFORM(
@@ -323,7 +323,6 @@ striking_vehicle_number int
 FROM accident_project.person_2003;
 
 
-add FILE /data/205project/pyscripts/2002Person.py;
  
 insert into table person PARTITION (year = '2002')
 select TRANSFORM(

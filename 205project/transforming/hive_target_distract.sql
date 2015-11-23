@@ -18,8 +18,18 @@ WITH SERDEPROPERTIES (
 STORED AS TEXTFILE
 LOCATION '/user/w205/accident_project/data/DISTRACT';
 
-
-add FILE /data/205project/pyscripts/2013Distract.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2013Distract.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2012Distract.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2011Distract.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2010Distract.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2009Distract.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2008Distract.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2007Distract.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2006Distract.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2005Distract.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2004Distract.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2003Distract.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2002Distract.py;
 
 insert into table distract PARTITION (year = '2013')
 select TRANSFORM(
@@ -33,7 +43,6 @@ factor varchar(500)
 )
 FROM accident_project.distract_2013;
 
-add FILE /data/205project/pyscripts/2012Distract.py;
 
 insert into table distract PARTITION (year = '2012')
 select TRANSFORM(
@@ -48,7 +57,6 @@ factor varchar(500)
 FROM accident_project.distract_2012;
 
 
-add FILE /data/205project/pyscripts/2011Distract.py;
 
 insert into table distract PARTITION (year = '2011')
 select TRANSFORM(
@@ -63,7 +71,6 @@ factor varchar(500)
 FROM accident_project.distract_2011;
 
 
-add FILE /data/205project/pyscripts/2010Distract.py;
 
 insert into table distract PARTITION (year = '2010')
 select TRANSFORM(
@@ -78,7 +85,6 @@ factor varchar(500)
 FROM accident_project.distract_2010;
 
 
-add FILE /data/205project/pyscripts/2009Distract.py;
 
 insert into table distract PARTITION (year = '2009')
 select TRANSFORM(
@@ -92,7 +98,6 @@ factor varchar(500)
 )
 FROM accident_project.distract_2009;
 
-add FILE /data/205project/pyscripts/2008Distract.py;
 
 insert into table distract PARTITION (year = '2008')
 select TRANSFORM(
@@ -108,7 +113,6 @@ FROM accident_project.distract_2008;
 
 
 
-add FILE /data/205project/pyscripts/2007Distract.py;
 
 insert into table distract PARTITION (year = '2007')
 select TRANSFORM(
@@ -124,7 +128,6 @@ FROM accident_project.distract_2007;
 
 
 
-add FILE /data/205project/pyscripts/2006Distract.py;
 
 insert into table distract PARTITION (year = '2006')
 select TRANSFORM(
@@ -139,7 +142,6 @@ factor varchar(500)
 FROM accident_project.distract_2006;
 
 
-add FILE /data/205project/pyscripts/2005Distract.py;
 
 insert into table distract PARTITION (year = '2005')
 select TRANSFORM(
@@ -154,7 +156,6 @@ factor varchar(500)
 FROM accident_project.distract_2005;
 
 
-add FILE /data/205project/pyscripts/2004Distract.py;
 
 insert into table distract PARTITION (year = '2004')
 select TRANSFORM(
@@ -169,7 +170,6 @@ factor varchar(500)
 FROM accident_project.distract_2004;
 
 
-add FILE /data/205project/pyscripts/2003Distract.py;
 
 insert into table distract PARTITION (year = '2003')
 select TRANSFORM(
@@ -185,7 +185,6 @@ FROM accident_project.distract_2003;
 
 
 
-add FILE /data/205project/pyscripts/2002Distract.py;
 
 insert into table distract PARTITION (year = '2002')
 select TRANSFORM(

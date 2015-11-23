@@ -63,7 +63,7 @@ def MostHarm_to_String(tmpValue):
 	if tmpEvent in non_Collision: return 'Non-Collision'
 	if tmpEvent in col_not_fixed: return 'Collision - Object Not Fixed'
 	if tmpEvent in col_fixed: return 'Collision - Object Fixed'
-	if tmpEvent in col_VinTrans: return 'Collisiion - Vehicle in Transport'
+	if tmpEvent in col_VinTrans: return 'Collision - Vehicle in Transport'
 	if tmpEvent in unknown: return 'Unknown'
 	return 'NA'
 #end MostHarm_to_String
