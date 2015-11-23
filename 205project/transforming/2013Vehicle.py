@@ -208,6 +208,8 @@ for line in sys.stdin:
 		output.append('NA') 
 	#Most_Harm_Event
 	output.append(MostHarm_to_String(tokens[7]))
+	#Num_injury
+	output.append(tokens[8])
 	#Max_Injury
 	MaxInjury2String = {'4': '01 Fatal',
 		'3': '02 Incapacitating',
@@ -219,7 +221,7 @@ for line in sys.stdin:
 		'9': '08 Unknown if Injured',
 		'8': '09 No Person Involved'}
 	try:
-		output.append(MaxInjury2String[tokens[8]])
+		output.append(MaxInjury2String[tokens[9]])
 	except:
 		output.append('NA')
 	#Driver Drinking
@@ -228,7 +230,7 @@ for line in sys.stdin:
 		'8': 'No Driver Present',
 		'9': 'Unknown'}
 	try:
-		output.append(Drinking2String[tokens[9]])
+		output.append(Drinking2String[tokens[10]])
 	except:
 		output.append('NA') 
 	#Speeding
@@ -240,11 +242,11 @@ for line in sys.stdin:
 		'8': 'No Driver Present',
 		'9': 'Unknown'}
 	try:
-		output.append(Speeding2String[tokens[10]])
+		output.append(Speeding2String[tokens[11]])
 	except:
 		output.append('NA') 	
 	#travel speed
-	output.append(tokens[11])
+	output.append(tokens[12])
 	#Pre-Event Movement
 	PreMove2String ={'0': 'No Driver Present',
 		'1': 'Going Straight',
@@ -267,15 +269,15 @@ for line in sys.stdin:
 		'98': 'Other',
 		'99': 'Unknown'}
 	try:
-		output.append(PreMove2String[tokens[12]])
+		output.append(PreMove2String[tokens[13]])
 	except:
 		output.append('NA') 
 	#Critical_Event_Precrash
-	output.append(CriticalEvent_to_String(tokens[13]))
+	output.append(CriticalEvent_to_String(tokens[14]))
 	#Accident Category and Type
 	#same token used for both
-	output.append(AccidentCategory_to_String(tokens[14]))
-	output.append(AccidentType_to_String(tokens[14]))
+	output.append(AccidentCategory_to_String(tokens[15]))
+	output.append(AccidentType_to_String(tokens[15]))
 	
 	
 	print("\t".join(output))
