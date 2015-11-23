@@ -202,7 +202,7 @@ for line in sys.stdin:
 		'8': 'Unknown',
 		'9': 'Unknown'}
 	try:
-		output.append(MaxInjury2String[tokens[6]])
+		output.append(Extent2String[tokens[6]])
 	except:
 		output.append('NA') 
 	#Most_Harm_Event
