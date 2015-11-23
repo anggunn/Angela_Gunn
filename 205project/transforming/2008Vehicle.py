@@ -134,7 +134,7 @@ def AccidentCategory_to_String(tmpValue):
 	if tmpEvent in Changing: return 'Changing Trafficway or Turning'
 	if tmpEvent in Intersecting: return 'Intersecting Paths (Vehicle Damage)'
 	if tmpEvent in Misc: return 'Miscellaneous'
-	if tmpEvent in Unknown: return 'Unknown
+	if tmpEvent in Unknown: return 'Unknown'
 	return 'NA'
 #end AccidentCategory_to_String
 

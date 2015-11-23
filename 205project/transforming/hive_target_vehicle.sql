@@ -31,7 +31,7 @@ STORED AS TEXTFILE
 LOCATION '/user/w205/accident_project/data/VEHICLE';
 
 
-add FILE /data/205project/pyscripts/2013Vehicle.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2013Vehicle.py;
 
 insert into table vehicle PARTITION (year = '2013')
 select TRANSFORM(
@@ -60,7 +60,7 @@ accident_type varchar(500)
 FROM accident_project.vehicle_2013;
 
 
-add FILE /data/205project/pyscripts/2012Vehicle.py;
+add file hdfs:///user/w205/accident_project/pyscripts/2012Vehicle.py;
 
 insert into table vehicle PARTITION (year = '2012')
 select TRANSFORM(
@@ -87,8 +87,8 @@ accident_type varchar(500)
 )
 FROM accident_project.vehicle_2012;
 
+add file hdfs:///user/w205/accident_project/pyscripts/2012Vehicle.py;
 
-add FILE /data/205project/pyscripts/2011Vehicle.py;
 
 insert into table vehicle PARTITION (year = '2011')
 select TRANSFORM(
@@ -115,8 +115,8 @@ accident_type varchar(500)
 )
 FROM accident_project.vehicle_2011;
 
+add file hdfs:///user/w205/accident_project/pyscripts/2010Vehicle.py;
 
-add FILE /data/205project/pyscripts/2010Vehicle.py;
 
 insert into table vehicle PARTITION (year = '2010')
 select TRANSFORM(
@@ -143,8 +143,8 @@ accident_type varchar(500)
 )
 FROM accident_project.vehicle_2010;
 
+add file hdfs:///user/w205/accident_project/pyscripts/2009Vehicle.py;
 
-add FILE /data/205project/pyscripts/2009Vehicle.py;
  
 insert into table vehicle PARTITION (year = '2009')
 select TRANSFORM(
@@ -171,8 +171,8 @@ accident_type varchar(500)
 )
 FROM accident_project.vehicle_2009;
 
+add file hdfs:///user/w205/accident_project/pyscripts/2008Vehicle.py;
 
-add FILE /data/205project/pyscripts/2008Vehicle.py;
  
 insert into table vehicle PARTITION (year = '2008')
 select TRANSFORM(
@@ -199,8 +199,8 @@ accident_type varchar(500)
 )
 FROM accident_project.vehicle_2008;
 
+add file hdfs:///user/w205/accident_project/pyscripts/2007Vehicle.py;
 
-add FILE /data/205project/pyscripts/2007Vehicle.py;
  
 insert into table vehicle PARTITION (year = '2007')
 select TRANSFORM(
@@ -228,8 +228,8 @@ accident_type varchar(500)
 FROM accident_project.vehicle_2008;
 
 
+add file hdfs:///user/w205/accident_project/pyscripts/2006Vehicle.py;
 
-add FILE /data/205project/pyscripts/2006Vehicle.py;
  
 insert into table vehicle PARTITION (year = '2006')
 select TRANSFORM(
@@ -257,8 +257,8 @@ accident_type varchar(500)
 FROM accident_project.vehicle_2006;
 
 
+add file hdfs:///user/w205/accident_project/pyscripts/2005Vehicle.py;
 
-add FILE /data/205project/pyscripts/2005Vehicle.py;
  
 insert into table vehicle PARTITION (year = '2005')
 select TRANSFORM(
@@ -286,8 +286,8 @@ accident_type varchar(500)
 FROM accident_project.vehicle_2008;
 
 
+add file hdfs:///user/w205/accident_project/pyscripts/2004Vehicle.py;
 
-add FILE /data/205project/pyscripts/2004Vehicle.py;
  
 insert into table vehicle PARTITION (year = '2004')
 select TRANSFORM(
@@ -315,8 +315,8 @@ accident_type varchar(500)
 FROM accident_project.vehicle_2004;
 
 
+add file hdfs:///user/w205/accident_project/pyscripts/2003Vehicle.py;
 
-add FILE /data/205project/pyscripts/2003Vehicle.py;
  
 insert into table vehicle PARTITION (year = '2003')
 select TRANSFORM(
@@ -344,8 +344,8 @@ accident_type varchar(500)
 FROM accident_project.vehicle_2003;
 
 
+add file hdfs:///user/w205/accident_project/pyscripts/2002Vehicle.py;
 
-add FILE /data/205project/pyscripts/2002Vehicle.py;
  
 insert into table vehicle PARTITION (year = '2002')
 select TRANSFORM(
