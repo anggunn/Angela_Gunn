@@ -226,3 +226,249 @@ Num_Injury int,
 Alcohol_Involved varchar(500)
 )
 FROM accident_project.accident_2009;
+
+add FILE /data/205project/pyscripts/2008Accident.py;
+
+insert into table accident PARTITION (year = '2008')
+select TRANSFORM(
+CaseNum, 2008, month, weekday, Hour, Region, 999, veh_invl, 
+999, non_invl, 999, Event1, MAN_COL,
+9, Rel_Jct, 9,Wrk_Zone,
+Weather, 
+max_sev, num_Inj,alcohol) 
+using "python 2008Accident.py" 
+as (case_number varchar(500), 
+file_year int, 
+month varchar(500),
+Day_of_Week varchar(500),
+Hour int,
+Region varchar(500),
+Num_Vehicles int,
+Num_ParkWork int,
+Persons_Ped int,
+Persons_NotTransit int,
+Persons_Transit int,
+First_Harm_Event varchar(500),
+Manner_Collision varchar(500),
+Within_Interchange varchar(500),
+Relation_to_Junction varchar(500),
+Intersection_Type varchar(500),
+Work_Zone varchar(500),
+Weather1 varchar(500),
+Weather2 varchar(500),
+Weather3 varchar(500),
+Max_Injury varchar(500),
+Num_Injury int,
+Alcohol_Involved varchar(500)
+)
+FROM accident_project.accident_2008;
+
+
+insert into table accident PARTITION (year = '2007')
+select TRANSFORM(
+CaseNum, 2007, month, weekday, Hour, Region, 999, veh_invl, 
+999, non_invl, 999, Event1, MAN_COL,
+9, Rel_Jct, 9,Wrk_Zone,
+Weather, 
+max_sev, num_Inj,alcohol) 
+using "python 2007Accident.py" 
+as (case_number varchar(500), 
+file_year int, 
+month varchar(500),
+Day_of_Week varchar(500),
+Hour int,
+Region varchar(500),
+Num_Vehicles int,
+Num_ParkWork int,
+Persons_Ped int,
+Persons_NotTransit int,
+Persons_Transit int,
+First_Harm_Event varchar(500),
+Manner_Collision varchar(500),
+Within_Interchange varchar(500),
+Relation_to_Junction varchar(500),
+Intersection_Type varchar(500),
+Work_Zone varchar(500),
+Weather1 varchar(500),
+Weather2 varchar(500),
+Weather3 varchar(500),
+Max_Injury varchar(500),
+Num_Injury int,
+Alcohol_Involved varchar(500)
+)
+FROM accident_project.accident_2007;
+
+
+insert into table accident PARTITION (year = '2006')
+select TRANSFORM(
+CaseNum, 2006, month, weekday, Hour, Region, 999, veh_invl, 
+999, non_invl, 999, Event1, MAN_COL,
+9, Rel_Jct, 9,Wrk_Zone,
+Weather, 
+max_sev, num_Inj,alcohol) 
+using "python 2006Accident.py" 
+as (case_number varchar(500), 
+file_year int, 
+month varchar(500),
+Day_of_Week varchar(500),
+Hour int,
+Region varchar(500),
+Num_Vehicles int,
+Num_ParkWork int,
+Persons_Ped int,
+Persons_NotTransit int,
+Persons_Transit int,
+First_Harm_Event varchar(500),
+Manner_Collision varchar(500),
+Within_Interchange varchar(500),
+Relation_to_Junction varchar(500),
+Intersection_Type varchar(500),
+Work_Zone varchar(500),
+Weather1 varchar(500),
+Weather2 varchar(500),
+Weather3 varchar(500),
+Max_Injury varchar(500),
+Num_Injury int,
+Alcohol_Involved varchar(500)
+)
+FROM accident_project.accident_2006;
+
+
+insert into table accident PARTITION (year = '2005')
+select TRANSFORM(
+CaseNum, 2005, month, weekday, Hour, Region, 999, veh_invl, 
+999, non_invl, 999, Event1, MAN_COL,
+9, Rel_Jct, 9,Wrk_Zone,
+Weather, 
+max_sev, num_Inj,alcohol) 
+using "python 2005Accident.py" 
+as (case_number varchar(500), 
+file_year int, 
+month varchar(500),
+Day_of_Week varchar(500),
+Hour int,
+Region varchar(500),
+Num_Vehicles int,
+Num_ParkWork int,
+Persons_Ped int,
+Persons_NotTransit int,
+Persons_Transit int,
+First_Harm_Event varchar(500),
+Manner_Collision varchar(500),
+Within_Interchange varchar(500),
+Relation_to_Junction varchar(500),
+Intersection_Type varchar(500),
+Work_Zone varchar(500),
+Weather1 varchar(500),
+Weather2 varchar(500),
+Weather3 varchar(500),
+Max_Injury varchar(500),
+Num_Injury int,
+Alcohol_Involved varchar(500)
+)
+FROM accident_project.accident_2005;
+
+
+insert into table accident PARTITION (year = '2004')
+select TRANSFORM(
+CaseNum, 2004, month, weekday, Hour, Region, 999, veh_invl, 
+999, non_invl, 999, Event1, MAN_COL,
+9, Rel_Jct, 9,Wrk_Zone,
+Weather, 
+max_sev, num_Inj,alcohol) 
+using "python 2004Accident.py" 
+as (case_number varchar(500), 
+file_year int, 
+month varchar(500),
+Day_of_Week varchar(500),
+Hour int,
+Region varchar(500),
+Num_Vehicles int,
+Num_ParkWork int,
+Persons_Ped int,
+Persons_NotTransit int,
+Persons_Transit int,
+First_Harm_Event varchar(500),
+Manner_Collision varchar(500),
+Within_Interchange varchar(500),
+Relation_to_Junction varchar(500),
+Intersection_Type varchar(500),
+Work_Zone varchar(500),
+Weather1 varchar(500),
+Weather2 varchar(500),
+Weather3 varchar(500),
+Max_Injury varchar(500),
+Num_Injury int,
+Alcohol_Involved varchar(500)
+)
+FROM accident_project.accident_2004;
+
+
+insert into table accident PARTITION (year = '2003')
+select TRANSFORM(
+CaseNum, 2003, month, weekday, Hour, Region, 999, veh_invl, 
+999, non_invl, 999, Event1, MAN_COL,
+9, Rel_Jct, 9,Wrk_Zone,
+Weather, 
+max_sev, num_Inj,alcohol) 
+using "python 2003Accident.py" 
+as (case_number varchar(500), 
+file_year int, 
+month varchar(500),
+Day_of_Week varchar(500),
+Hour int,
+Region varchar(500),
+Num_Vehicles int,
+Num_ParkWork int,
+Persons_Ped int,
+Persons_NotTransit int,
+Persons_Transit int,
+First_Harm_Event varchar(500),
+Manner_Collision varchar(500),
+Within_Interchange varchar(500),
+Relation_to_Junction varchar(500),
+Intersection_Type varchar(500),
+Work_Zone varchar(500),
+Weather1 varchar(500),
+Weather2 varchar(500),
+Weather3 varchar(500),
+Max_Injury varchar(500),
+Num_Injury int,
+Alcohol_Involved varchar(500)
+)
+FROM accident_project.accident_2003;
+
+
+insert into table accident PARTITION (year = '2002')
+select TRANSFORM(
+CaseNum, 2002, month, weekday, Hour, Region, 999, veh_invl, 
+999, non_invl, 999, Event1, MAN_COL,
+9, Rel_Jct, 9,Wrk_Zone,
+Weather, 
+max_sev, num_Inj,alcohol)  
+using "python 2002Accident.py" 
+as (case_number varchar(500), 
+file_year int, 
+month varchar(500),
+Day_of_Week varchar(500),
+Hour int,
+Region varchar(500),
+Num_Vehicles int,
+Num_ParkWork int,
+Persons_Ped int,
+Persons_NotTransit int,
+Persons_Transit int,
+First_Harm_Event varchar(500),
+Manner_Collision varchar(500),
+Within_Interchange varchar(500),
+Relation_to_Junction varchar(500),
+Intersection_Type varchar(500),
+Work_Zone varchar(500),
+Weather1 varchar(500),
+Weather2 varchar(500),
+Weather3 varchar(500),
+Max_Injury varchar(500),
+Num_Injury int,
+Alcohol_Involved varchar(500)
+)
+FROM accident_project.accident_2002;

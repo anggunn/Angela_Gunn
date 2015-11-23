@@ -91,3 +91,110 @@ file_year int,
 factor varchar(500)
 )
 FROM accident_project.distract_2009;
+
+add FILE /data/205project/pyscripts/2008Distract.py;
+
+insert into table distract PARTITION (year = '2008')
+select TRANSFORM(
+CaseNum, vehno, '2008', MDRDSTRD) 
+using "python 2008Distract.py" 
+as (
+case_number varchar(500), 
+vehicle_number int,
+file_year int, 
+factor varchar(500)
+)
+FROM accident_project.distract_2008;
+
+
+
+add FILE /data/205project/pyscripts/2007Distract.py;
+
+insert into table distract PARTITION (year = '2007')
+select TRANSFORM(
+CaseNum, vehno, '2007', MDRDSTRD) 
+using "python 2007Distract.py" 
+as (
+case_number varchar(500), 
+vehicle_number int,
+file_year int, 
+factor varchar(500)
+)
+FROM accident_project.distract_2007;
+
+
+
+add FILE /data/205project/pyscripts/2006Distract.py;
+
+insert into table distract PARTITION (year = '2006')
+select TRANSFORM(
+CaseNum, vehno, '2006', MDRDSTRD) 
+using "python 2006Distract.py" 
+as (
+case_number varchar(500), 
+vehicle_number int,
+file_year int, 
+factor varchar(500)
+)
+FROM accident_project.distract_2006;
+
+
+add FILE /data/205project/pyscripts/2005Distract.py;
+
+insert into table distract PARTITION (year = '2005')
+select TRANSFORM(
+CaseNum, vehno, '2005', MDRDSTRD) 
+using "python 2005Distract.py" 
+as (
+case_number varchar(500), 
+vehicle_number int,
+file_year int, 
+factor varchar(500)
+)
+FROM accident_project.distract_2005;
+
+
+add FILE /data/205project/pyscripts/2004Distract.py;
+
+insert into table distract PARTITION (year = '2004')
+select TRANSFORM(
+CaseNum, vehno, '2004', MDRDSTRD) 
+using "python 2004Distract.py" 
+as (
+case_number varchar(500), 
+vehicle_number int,
+file_year int, 
+factor varchar(500)
+)
+FROM accident_project.distract_2004;
+
+
+add FILE /data/205project/pyscripts/2003Distract.py;
+
+insert into table distract PARTITION (year = '2003')
+select TRANSFORM(
+CaseNum, vehno, '2003', MDRDSTRD) 
+using "python 2003Distract.py" 
+as (
+case_number varchar(500), 
+vehicle_number int,
+file_year int, 
+factor varchar(500)
+)
+FROM accident_project.distract_2003;
+
+
+
+add FILE /data/205project/pyscripts/2002Distract.py;
+
+insert into table distract PARTITION (year = '2002')
+select TRANSFORM(
+CaseNum, vehno, '2002', MDRDSTRD) 
+using "python 2002Distract.py" 
+as (
+case_number varchar(500), 
+vehicle_number int,
+file_year int, 
+factor varchar(500)
+)
+FROM accident_project.distract_2002;

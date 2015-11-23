@@ -23,6 +23,13 @@ tail -n +2 "PERSON.TXT" > 2010_person.txt
 tail -n +2 "VEHICLE.TXT" > 2010_vehicle.txt      
 
 
+#remove unneeded files
+rm ACCIDENT.TXT           
+rm DISTRACT.TXT             
+rm PARKED.TXT            
+rm PERSON.TXT             
+rm VEHICLE.TXT    
+
 # create 2010 directory
 hdfs dfs -rm -R /user/w205/accident_project/2010
 hdfs dfs -mkdir /user/w205/accident_project/2010
@@ -39,9 +46,5 @@ hdfs dfs -put 2010_person.txt /user/w205/accident_project/2010/PERSON
 hdfs dfs -mkdir /user/w205/accident_project/2010/VEHICLE
 hdfs dfs -put 2010_vehicle.txt /user/w205/accident_project/2010/VEHICLE
 
-
-
-#remove unneeded files
-rm -R TXT
 
 

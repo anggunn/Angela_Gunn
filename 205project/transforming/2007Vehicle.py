@@ -3,7 +3,7 @@ import sys
 import datetime
 import string
 
-##2009 Vehicle
+##2007 Vehicle
 
 #FUNCTION BodyType_to_String
 #INPUT - the value from query
@@ -177,6 +177,7 @@ def AccidentType_to_String(tmpValue):
 	return 'NA'
 #end AccidentType_to_String
 
+
 #MAIN CODE
 for line in sys.stdin:
 	output = []
@@ -195,9 +196,9 @@ for line in sys.stdin:
 	output.append(tokens[5])
 	#Extent_Damage
 	Extent2String = {'0': 'No Damage',
-		'2': 'Minor Damage',
-		'4': 'Functional Damage',
-		'6': 'Disabling Damage',
+		'1': 'Minor Damage',
+		'2': 'Functional Damage',
+		'3': 'Disabling Damage',
 		'9': 'Unknown'}
 	try:
 		output.append(MaxInjury2String[tokens[6]])

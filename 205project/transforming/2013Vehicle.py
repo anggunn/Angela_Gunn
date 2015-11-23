@@ -65,8 +65,10 @@ def MostHarm_to_String(tmpValue):
 	if tmpEvent in col_fixed: return 'Collision - Object Fixed'
 	if tmpEvent in col_VinTrans: return 'Collisiion - Vehicle in Transport'
 	if tmpEvent in unknown: return 'Unknown'
-	return ''
+	return 'NA'
 #end MostHarm_to_String
+
+
 
 #FUNCTION CriticalEvent_to_String
 #INPUT - the value from query
@@ -106,6 +108,75 @@ def CriticalEvent_to_String(tmpValue):
 		
 	return 'NA'
 #end CriticalEvent_to_String
+
+#FUNCTION AccidentCategory_to_String
+#INPUT - the value from query
+#OUTPUT - string description
+def AccidentCategory_to_String(tmpValue):
+	try:
+		tmpEvent = int(tmpValue)
+	except:
+		tmpEvent = 100
+	
+	noImpact = [0]
+	Single = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+	SameDirect = [20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49]
+	OppDirect = [50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67]
+	Changing = [68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85]
+	Intersecting = [86,87,88,89,90,91]
+	Misc = [92,93,97,98,99]
+	Unknown = [100]
+	
+	if tmpEvent in noImpact: return 'No Impact'
+	if tmpEvent in Single: return 'Single Driver'
+	if tmpEvent in SameDirect: return 'Same Trafficway, Same Direction'
+	if tmpEvent in OppDirect: return 'Same Trafficway, Opposite Direction'
+	if tmpEvent in Changing: return 'Changing Trafficway or Turning'
+	if tmpEvent in Intersecting: return 'Intersecting Paths (Vehicle Damage)'
+	if tmpEvent in Misc: return 'Miscellaneous'
+	if tmpEvent in Unknown: return 'Unknown
+	return 'NA'
+#end AccidentCategory_to_String
+
+
+#FUNCTION AccidentType_to_String
+#INPUT - the value from query
+#OUTPUT - string description
+def AccidentType_to_String(tmpValue):
+	try:
+		tmpEvent = int(tmpValue)
+	except:
+		tmpEvent = 100
+		
+	NoImpact = [0]
+	Right = [1,2,3,4,5]
+	Left = [6,7,8,9,10]
+	Forward = [11,12,13,14,15,16, 34,35,36,37,3,39,40,41,42,43,54,55,56,57,58,59,60,61,62,63]
+	Rear = [20,21,22,23,24,25,26,27,28,29,30,31,32,33]
+	Sideswipe = [44,45,46,47,48,49,64,65,66,67]
+	Head = [50,51,52,53]
+	Turn_Across = [68,69,70,71,72,73,74,75]
+	Turn_Into = [76,77,78,79,80,81,82,83,84,85]
+	TBone = [86,87,88,89,90,91]
+	BackingOther = [92,93,97,98,99]
+	Unknown = [100]
+	
+	if tmpEvent in NoImpact: return 'No Impact'
+	if tmpEvent in Right: return 'Right Roadside Departure'
+	if tmpEvent in Left: return 'Left Roadside Departure'
+	if tmpEvent in Forward: return 'Forward Impact'
+	if tmpEvent in Rear: return 'Rear End'
+	if tmpEvent in Sideswipe: return 'Sideswipe or Angle'
+	if tmpEvent in Head: return 'Head-On'
+	if tmpEvent in Turn_Across: return 'Turn Across Path'
+	if tmpEvent in Turn_Into: return 'Turn Into Path'
+	if tmpEvent in TBone: return 'Straight Paths (T-Bone)'
+	if tmpEvent in BackingOther: return 'Backing or Other'
+	if tmpEvent in Unknown: return 'Unknown'
+		
+	return 'NA'
+#end AccidentType_to_String
+
 
 
 #MAIN CODE
@@ -201,4 +272,12 @@ for line in sys.stdin:
 		output.append('NA') 
 	#Critical_Event_Precrash
 	output.append(CriticalEvent_to_String(tokens[13]))
+	#Accident Category and Type
+	#same token used for both
+	output.append(AccidentCategory_to_String(tokens[14]))
+	output.append(AccidentType_to_String(tokens[14]))
+	
+	
+	print("\t".join(output))
+
 	
