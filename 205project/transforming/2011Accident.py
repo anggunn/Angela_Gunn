@@ -91,7 +91,7 @@ for line in sys.stdin:
 	#First Harmful Event
 	output.append(FirstHarm_to_String(tokens[11]))
 	#Manner_Collision
-	ManColl2String = {'0': 'Non-Collision - Vehicle in Transport',
+	ManColl2String = {'0': 'No Collision with a Vehicle in Transport',
 		'1': 'Front-to-Rear',
 		'2': 'Front-to-Front',
 		'10': 'Rear-to-Rear',

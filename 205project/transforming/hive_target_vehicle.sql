@@ -44,11 +44,14 @@ add file hdfs:///user/w205/accident_project/pyscripts/2004Vehicle.py;
 add file hdfs:///user/w205/accident_project/pyscripts/2003Vehicle.py;
 add file hdfs:///user/w205/accident_project/pyscripts/2002Vehicle.py;
 
+
+
+--note I am purposefully using 2012 python file here. it is the same as 2013, but works.
 insert into table vehicle PARTITION (year = '2013')
 select TRANSFORM(
 CaseNum, veh_no, '2013', numoccs, body_typ, mod_year, deformed, m_harm, NUM_INJV,
 max_vsev, veh_alch, speedrel, trav_sp, p_crash1, p_crash2,ACC_TYPE) 
-using "python 2013Vehicle.py" 
+using "python 2012Vehicle.py" 
 as (
 
 case_number varchar(500), 
@@ -238,7 +241,7 @@ critical_event_precrash varchar(500),
 accident_category varchar(500),
 accident_type varchar(500)
 )
-FROM accident_project.vehicle_2008;
+FROM accident_project.vehicle_2007;
 
 
 
@@ -296,7 +299,7 @@ critical_event_precrash varchar(500),
 accident_category varchar(500),
 accident_type varchar(500)
 )
-FROM accident_project.vehicle_2008;
+FROM accident_project.vehicle_2005;
 
 
 

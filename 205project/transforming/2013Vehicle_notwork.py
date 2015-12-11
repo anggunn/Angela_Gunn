@@ -3,7 +3,7 @@ import sys
 import datetime
 import string
 
-#2012 Vehicle
+##2013 Vehicle
 
 #FUNCTION BodyType_to_String
 #INPUT - the value from query
@@ -14,7 +14,6 @@ def BodyType_to_String(tmpValue):
 	except:
 		tmpEvent = 100
 		
-	
 	Automobile = [1,2,3,4,5,6,7,17,8,9]
 	Auto_Deriv = [10,11,12,13]
 	Utility = [14,15,16,19]
@@ -54,7 +53,6 @@ def MostHarm_to_String(tmpValue):
 		tmpEvent = int(tmpValue)
 	except:
 		tmpEvent = 100
-		
 	
 	non_Collision = [1,2,3,4,51,44,7,16,6,72,73,5]
 	col_not_fixed = [8,9,10,11,49,15,18,14,45]
@@ -70,6 +68,8 @@ def MostHarm_to_String(tmpValue):
 	return 'NA'
 #end MostHarm_to_String
 
+
+
 #FUNCTION CriticalEvent_to_String
 #INPUT - the value from query
 #OUTPUT - string description
@@ -79,7 +79,6 @@ def CriticalEvent_to_String(tmpValue):
 	except:
 		tmpEvent = 100
 		
-	
 	LossControl = [1,2,3,4,5,6,8,9]
 	Edge = [10,11,12,13,14]
 	Turning = [15,16]
@@ -103,6 +102,7 @@ def CriticalEvent_to_String(tmpValue):
 	if tmpEvent in PedCycle: return 'Pedestrian, Pedacyclist or Other Non-Motorist in Road'
 	if tmpEvent in Animal: return 'Animal in Road'
 	if tmpEvent in Object: return 'Object in Road'
+	if tmpEvent in Farm_Const: return 'Farm or Construction Vehicle'
 	if tmpEvent in Other: return 'Other Event'
 	if tmpEvent in unknown: return 'Unknown'
 		
@@ -178,6 +178,7 @@ def AccidentType_to_String(tmpValue):
 #end AccidentType_to_String
 
 
+
 #MAIN CODE
 for line in sys.stdin:
 	output = []
@@ -234,7 +235,10 @@ for line in sys.stdin:
 		output.append('NA') 
 	#Speeding
 	Speeding2String = {'0': 'No',
-		'1': 'Yes',
+		'2': 'Yes',
+		'3': 'Yes',
+		'4': 'Yes',
+		'5': 'Yes',
 		'8': 'No Driver Present',
 		'9': 'Unknown'}
 	try:
@@ -276,5 +280,6 @@ for line in sys.stdin:
 	output.append(AccidentType_to_String(tokens[15]))
 	
 	
-	
 	print("\t".join(output))
+
+	

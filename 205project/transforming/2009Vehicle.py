@@ -94,7 +94,7 @@ def CriticalEvent_to_String(tmpValue):
 	unknown = [99,100]
 	
 	if tmpEvent in LossControl: return 'Vehicle Loss of Control'
-	if tmpEvent in Edge: return 'Vehicle Travelling on Road Edge'
+	if tmpEvent in Edge: return 'Vehicle Travelling on Lane Edge'
 	if tmpEvent in Turning: return 'Vehicle Turning at Junction'
 	if tmpEvent in Crossing: return 'Vehicle Crossing Intersection'
 	if tmpEvent in Decelerating: return 'Vehicle Decelerating'
@@ -151,7 +151,7 @@ def AccidentType_to_String(tmpValue):
 	NoImpact = [0]
 	Right = [1,2,3,4,5]
 	Left = [6,7,8,9,10]
-	Forward = [11,12,13,14,15,16, 34,35,36,37,3,39,40,41,42,43,54,55,56,57,58,59,60,61,62,63]
+	Forward = [11,12,13,14,15,16, 34,35,36,37,38,39,40,41,42,43,54,55,56,57,58,59,60,61,62,63]
 	Rear = [20,21,22,23,24,25,26,27,28,29,30,31,32,33]
 	Sideswipe = [44,45,46,47,48,49,64,65,66,67]
 	Head = [50,51,52,53]
@@ -260,7 +260,7 @@ for line in sys.stdin:
 		'15': 'Changing Lanes',
 		'16': 'Merging',
 		'17': 'Successful Corrective Action to Previous Critical Event',
-		'98': 'Other',
+		'97': 'Other',
 		'99': 'Unknown'}
 	try:
 		output.append(PreMove2String[tokens[13]])

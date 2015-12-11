@@ -1,0 +1,125 @@
+
+
+
+#the SAS files
+wget ftp://ftp.nhtsa.dot.gov/GES/GES08/GES2008.zip
+wget ftp://ftp.nhtsa.dot.gov/GES/GES07/GES2007.zip
+wget ftp://ftp.nhtsa.dot.gov/GES/GES06/SAS/GES2006.zip
+wget ftp://ftp.nhtsa.dot.gov/GES/GES05/SAS/GES2005.zip
+wget ftp://ftp.nhtsa.dot.gov/GES/GES04/GES04.zip
+wget ftp://ftp.nhtsa.dot.gov/GES/GES03/SAS/GES03.zip
+wget ftp://ftp.nhtsa.dot.gov/GES/GES02/SAS/GES02.zip
+
+
+
+unzip GES2008.zip "accident.sas7bdat"  -d 2008
+unzip GES2008.zip "distract.sas7bdat"   -d 2008
+unzip GES2008.zip "parked.sas7bdat"   -d 2008
+unzip GES2008.zip "person.sas7bdat"   -d 2008
+unzip GES2008.zip "vehicle.sas7bdat"   -d 2008
+
+
+unzip GES2007.zip "accident.sas7bdat"  -d 2007
+unzip GES2007.zip "distract.sas7bdat"   -d 2007
+unzip GES2007.zip "parked.sas7bdat"   -d 2007
+unzip GES2007.zip "person.sas7bdat"   -d 2007
+unzip GES2007.zip "vehicle.sas7bdat"   -d 2007
+
+
+unzip GES2006.zip "accident.sas7bdat"  -d 2006
+unzip GES2006.zip "distract.sas7bdat"   -d 2006
+unzip GES2006.zip "parked.sas7bdat"   -d 2006
+unzip GES2006.zip "person.sas7bdat"   -d 2006
+unzip GES2006.zip "vehicle.sas7bdat"   -d 2006
+
+
+
+unzip GES2005.zip "accident.sas7bdat"  -d 2005
+unzip GES2005.zip "distract.sas7bdat"   -d 2005
+unzip GES2005.zip "parked.sas7bdat"   -d 2005
+unzip GES2005.zip "person.sas7bdat"   -d 2005
+unzip GES2005.zip "vehicle.sas7bdat"   -d 2005
+
+
+unzip GES04.zip "accident.sas7bdat"  -d 2004
+unzip GES04.zip "distract.sas7bdat"   -d 2004
+unzip GES04.zip "parked.sas7bdat"   -d 2004
+unzip GES04.zip "person.sas7bdat"   -d 2004
+unzip GES04.zip "vehicle.sas7bdat"   -d 2004
+
+
+unzip GES03.zip "accident.sas7bdat"  -d 2003
+unzip GES03.zip "distract.sas7bdat"   -d 2003
+unzip GES03.zip "parked.sas7bdat"   -d 2003
+unzip GES03.zip "person.sas7bdat"   -d 2003
+unzip GES03.zip "vehicle.sas7bdat"   -d 2003
+
+
+unzip GES02.zip "accident.sas7bdat"  -d 2002
+unzip GES02.zip "distract.sas7bdat"   -d 2002
+unzip GES02.zip "parked.sas7bdat"   -d 2002
+unzip GES02.zip "person.sas7bdat"   -d 2002
+unzip GES02.zip "vehicle.sas7bdat"   -d 2002
+
+
+./sas7bdat_to_csv /home/angela/accident_data/2008/*.sas7bdat
+./sas7bdat_to_csv /home/angela/accident_data/2007/*.sas7bdat
+./sas7bdat_to_csv /home/angela/accident_data/2006/*.sas7bdat
+./sas7bdat_to_csv /home/angela/accident_data/2005/*.sas7bdat
+./sas7bdat_to_csv /home/angela/accident_data/2004/*.sas7bdat
+./sas7bdat_to_csv /home/angela/accident_data/2003/*.sas7bdat
+./sas7bdat_to_csv /home/angela/accident_data/2002/*.sas7bdat
+
+
+rm 2008/*.txt
+rm 2007/*.txt
+rm 2006/*.txt
+rm 2005/*.txt
+rm 2004/*.txt
+rm 2003/*.txt
+rm 2002/*.txt
+
+
+
+python fixcsv.py 2008/accident.csv 2008/ACCIDENT.TXT
+python fixcsv.py 2008/distract.csv 2008/DISTRACT.TXT
+python fixcsv.py 2008/parked.csv 2008/PARKED.TXT
+python fixcsv.py 2008/person.csv 2008/PERSON.TXT
+python fixcsv.py 2008/vehicle.csv 2008/VEHICLE.TXT
+
+
+python fixcsv.py 2007/accident.csv 2007/ACCIDENT.TXT
+python fixcsv.py 2007/distract.csv 2007/DISTRACT.TXT
+python fixcsv.py 2007/parked.csv 2007/PARKED.TXT
+python fixcsv.py 2007/person.csv 2007/PERSON.TXT
+python fixcsv.py 2007/vehicle.csv 2007/VEHICLE.TXT
+
+python fixcsv.py 2006/accident.csv 2006/ACCIDENT.TXT
+python fixcsv.py 2006/distract.csv 2006/DISTRACT.TXT
+python fixcsv.py 2006/parked.csv 2006/PARKED.TXT
+python fixcsv.py 2006/person.csv 2006/PERSON.TXT
+python fixcsv.py 2006/vehicle.csv 2006/VEHICLE.TXT
+
+python fixcsv.py 2005/accident.csv 2005/ACCIDENT.TXT
+python fixcsv.py 2005/distract.csv 2005/DISTRACT.TXT
+python fixcsv.py 2005/parked.csv 2005/PARKED.TXT
+python fixcsv.py 2005/person.csv 2005/PERSON.TXT
+python fixcsv.py 2005/vehicle.csv 2005/VEHICLE.TXT
+
+python fixcsv.py 2004/accident.csv 2004/ACCIDENT.TXT
+python fixcsv.py 2004/distract.csv 2004/DISTRACT.TXT
+python fixcsv.py 2004/parked.csv 2004/PARKED.TXT
+python fixcsv.py 2004/person.csv 2004/PERSON.TXT
+python fixcsv.py 2004/vehicle.csv 2004/VEHICLE.TXT
+
+python fixcsv.py 2003/accident.csv 2003/ACCIDENT.TXT
+python fixcsv.py 2003/distract.csv 2003/DISTRACT.TXT
+python fixcsv.py 2003/parked.csv 2003/PARKED.TXT
+python fixcsv.py 2003/person.csv 2003/PERSON.TXT
+python fixcsv.py 2003/vehicle.csv 2003/VEHICLE.TXT
+
+python fixcsv.py 2002/accident.csv 2002/ACCIDENT.TXT
+python fixcsv.py 2002/distract.csv 2002/DISTRACT.TXT
+python fixcsv.py 2002/parked.csv 2002/PARKED.TXT
+python fixcsv.py 2002/person.csv 2002/PERSON.TXT
+python fixcsv.py 2002/vehicle.csv 2002/VEHICLE.TXT

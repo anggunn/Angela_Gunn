@@ -26,7 +26,7 @@ def FirstHarm_to_String(tmpValue):
 	if tmpEvent in non_Collision: return 'Non-Collision'
 	if tmpEvent in col_not_fixed: return 'Collision - Object Not Fixed'
 	if tmpEvent in col_fixed: return 'Collision - Object Fixed'
-	if tmpEvent in col_VinTrans: return 'Collisiion - Vehicle in Transport'
+	if tmpEvent in col_VinTrans: return 'Collision - Vehicle in Transport'
 	if tmpEvent in unknown: return 'Unknown'
 	return 'NA'
 #end FirstHarm_to_String
@@ -179,7 +179,7 @@ for line in sys.stdin:
 	#First Harmful Event
 	output.append(FirstHarm_to_String(tokens[11]))
 	#Manner_Collision
-	ManColl2String = {'0': 'Non-Collision - Vehicle in Transport',
+	ManColl2String = {'0': 'No Collision with a Vehicle in Transport',
 		'1': 'Front-to-Rear',
 		'2': 'Front-to-Front',
 		'3': 'Rear-to-Rear',
