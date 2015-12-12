@@ -8,7 +8,7 @@ git**
 The files you want are in the **MIDS-W205/exercise_2/** directory.
 2) Create an instance using **ucbw205_complete_plus_postgres_PY2.7** and install Streamparse on it.
 3) Make sure python 2.7 is the default python version.
-4) Ensure all required libraries are installed: psycopg2, streamparse, tweepy
+4) Ensure all required libraries are installed: psycopg2, streamparse, tweepy, numpy, matplotlib
 5) install psycopg by running: $pip install psycopg2
 6) Create a project called EX2Tweetwordcount in Streamparse, using  
 **$ sparse quickstart EX2Tweetwordcount**
