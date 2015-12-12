@@ -64,7 +64,7 @@ Example:
 
 ## Other Files
 Some additional files:  
-| File Name  | Location |   Description  |   
+| File Name  | Location | Description  |   
 | :------------- |:-------------|:----------   |   
 | plot.png      | MIDS-W205/exercise_2/results/ | A plot taken from early in the run of the application |   
 | plot500_600.png      | MIDS-W205/exercise_2/results/      |   A plot taken of words with count between 500 and 600 |   
