@@ -1,6 +1,7 @@
 # Angela Gunn
 # W205-6 Exercise 2
 
+
 ## Steps to run the application:
 1) Clone Github Repository from **https://github.com/anggunn/MIDSW205.
 git**
