@@ -64,6 +64,8 @@ Example:
 
 ## Other Files
 Some additional files:  
+
+
 | File Name  | Location | Description  |   
 | :------------- |:-------------|:----------   |   
 | plot.png      | MIDS-W205/exercise_2/results/ | A plot taken from early in the run of the application |   
@@ -73,4 +75,12 @@ Some additional files:
 | screenshot-extract-all_2.png | MIDS-W205/exercise_2/screenshots/ | A capture of the end of the output from finalresults.py with no parameters provided. |   
 | screenshot-twitterStream.png | MIDS-W205/exercise_2/screenshots/ | A capture of the application running, showing the output of the words coming from the wordcount.py bolt. |   
 
+| File Name        | Location           |   
+| :------------- |:-------------|   
+| Twittercredentials.py      | EX2Tweetwordcount/ 
+| EX2tweetwordcount.clf      | EX2Tweetwordcount/topologies/      |   
+| Tweets.py | EX2Tweetwordcount/src/spouts/
+| Parse.py | EX2Tweetwordcount/src/bolts/
+| Wordcount.py | EX2Tweetwordcount/src/bolts/
+| createtable.py | EX2Tweetwordcount/ 
 
