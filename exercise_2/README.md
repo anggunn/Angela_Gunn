@@ -64,13 +64,13 @@ Example:
 
 ## Other Files
 Some additional files:  
-| File Name        | Location           |   Description  
+| File Name  | Location |   Description  |
 | :------------- |:-------------|:----------   
-| plot.png      | MIDS-W205/exercise_2/results/ | A plot taken from early in the run of the application
-| plot500_600.png      | MIDS-W205/exercise_2/results/      |   A plot taken of words with count between 500 and 600
-| hist_top20.png | MIDS-W205/exercise_2/results/ | A plot of the top 20 words with the highest count
-| screenshot-extract-all_1.png | MIDS-W205/exercise_2/screenshots/ | A capture of the middle of the output from finalresults.py with no parameters provided.
-| screenshot-extract-all_2.png | MIDS-W205/exercise_2/screenshots/ | A capture of the end of the output from finalresults.py with no parameters provided.
-| screenshot-twitterStream.png | MIDS-W205/exercise_2/screenshots/ | A capture of the application running, showing the output of the words coming from the wordcount.py bolt.
+| plot.png      | MIDS-W205/exercise_2/results/ | A plot taken from early in the run of the application |
+| plot500_600.png      | MIDS-W205/exercise_2/results/      |   A plot taken of words with count between 500 and 600 |
+| hist_top20.png | MIDS-W205/exercise_2/results/ | A plot of the top 20 words with the highest count |
+| screenshot-extract-all_1.png | MIDS-W205/exercise_2/screenshots/ | A capture of the middle of the output from finalresults.py with no parameters provided. |
+| screenshot-extract-all_2.png | MIDS-W205/exercise_2/screenshots/ | A capture of the end of the output from finalresults.py with no parameters provided. |
+| screenshot-twitterStream.png | MIDS-W205/exercise_2/screenshots/ | A capture of the application running, showing the output of the words coming from the wordcount.py bolt. |
 
 
