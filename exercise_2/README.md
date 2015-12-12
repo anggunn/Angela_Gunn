@@ -4,17 +4,17 @@
 
 ## Steps to run the application:
 1) Clone Github Repository from **https://github.com/anggunn/MIDSW205.
-git**
-The files you want are in the **MIDS-W205/exercise_2/** directory.
-2) Create an instance using **ucbw205_complete_plus_postgres_PY2.7** and install Streamparse on it.
-3) Make sure python 2.7 is the default python version.
-4) Ensure all required libraries are installed: psycopg2, streamparse, tweepy, numpy, matplotlib
-5) install psycopg by running: $pip install psycopg2
+git**  
+The files you want are in the **MIDS-W205/exercise_2/** directory.  
+2) Create an instance using **ucbw205_complete_plus_postgres_PY2.7** and install Streamparse on it.  
+3) Make sure python 2.7 is the default python version.  
+4) Ensure all required libraries are installed: psycopg2, streamparse, tweepy, numpy, matplotlib  
+5) install psycopg by running: $pip install psycopg2  
 6) Create a project called EX2Tweetwordcount in Streamparse, using  
-**$ sparse quickstart EX2Tweetwordcount**
-7) Move the files in **MIDS-W205/exercise_2/EX2Tweetwordcount** to the appropriate directories in the new project:
+**$ sparse quickstart EX2Tweetwordcount**  
+7) Move the files in **MIDS-W205/exercise_2/EX2Tweetwordcount** to the appropriate directories in the new project:  
 
-| File Name        | Location           |   
+| File Name        | Location           |     
 | :------------- |:-------------|   
 | Twittercredentials.py      | EX2Tweetwordcount/ 
 | EX2tweetwordcount.clf      | EX2Tweetwordcount/topologies/      |   
@@ -23,23 +23,23 @@ The files you want are in the **MIDS-W205/exercise_2/** directory.
 | Wordcount.py | EX2Tweetwordcount/src/bolts/
 | createtable.py | EX2Tweetwordcount/ 
 
-8) Ensure EX2tweetwordcount.clf is the only .clf file in EX2Tweetwordcount/topologies/
-9) Edit Twittercredentials.py to use your Twitter credentials
-10) In Postgres, create a database using the command: **CREATE DATABASE tcount;**
-11) Execute the python file createtable.py: ** $python createtable.py
-12) While in the EX2Tweetwordcount/ directory, start the application with the following command: **$ sparse run**
+8) Ensure EX2tweetwordcount.clf is the only .clf file in EX2Tweetwordcount/topologies/  
+9) Edit Twittercredentials.py to use your Twitter credentials  
+10) In Postgres, create a database using the command: **CREATE DATABASE tcount;**  
+11) Execute the python file createtable.py: ** $python createtable.py  
+12) While in the EX2Tweetwordcount/ directory, start the application with the following command: **$ sparse run**  
 
 ## Steps to run the Analysis:
 
-### MIDS-W205/exercise_2/results/finalresults.py
-This script gets a word as an argument and returns the total number of word occurences in the stream. Words are case sensitve.  
-Example:  
-**$ python finalresults.py hello**  
-Total number of occurrences of 'hello': 130
+### MIDS-W205/exercise_2/results/finalresults.py  
+This script gets a word as an argument and returns the total number of word occurences in the stream. Words are case sensitve.    
+Example:    
+**$ python finalresults.py hello**    
+Total number of occurrences of 'hello': 130  
 
-Running finalresults.py without an argument returns all the words in the stream and their total count of occurrences, sorted alphabetically in an ascending order, one word per line.  
-Example:  
-**$ python finalresults.py**  
+Running finalresults.py without an argument returns all the words in the stream and their total count of occurrences, sorted alphabetically in an ascending order, one word per line.    
+Example:    
+**$ python finalresults.py**    
 ...  
 ('zude', 1)  
 ('zulran', 1)  
@@ -49,21 +49,21 @@ Example:
 ...
 
 ### MIDS-W205/exercise_2/results/histogram.py
-This script gets two integers k1,k2 and returns all the words that their total number of occurrences in the stream is more or equal than k1 and less or equal than k2.  This method will also produce a histogram **plot.png**, saved to the current folder.  
-Example:  
+This script gets two integers k1,k2 and returns all the words that their total number of occurrences in the stream is more or equal than k1 and less or equal than k2.  This method will also produce a histogram **plot.png**, saved to the current folder.    
+Example:    
 **$ python histogram.py 500 600**  
 school: 501  
 Love: 503  
 Kanye: 506  
 ...
 
-### MIDS-W205/exercise_2/results/histogram_top20.py
-This script creates a histogram of the top 20 words in the database based on the count frequency of the word. The file the histogram is saved to is **hist_top20.png**  
-Example:  
-**$ python histogram_top20.py**
+### MIDS-W205/exercise_2/results/histogram_top20.py  
+This script creates a histogram of the top 20 words in the database based on the count frequency of the word. The file the histogram is saved to is **hist_top20.png**    
+Example:    
+**$ python histogram_top20.py**  
 
 ## Other Files
-Some additional files:  
+Some additional files:    
 
 
 | File Name  | Location | Description  |   
