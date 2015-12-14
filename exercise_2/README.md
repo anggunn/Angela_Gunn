@@ -75,6 +75,7 @@ Some additional files:
 | screenshot-extract-all_2.png | MIDS-W205/exercise_2/screenshots/ | A capture of the end of the output from finalresults.py with no parameters provided. |   
 | screenshot-twitterStream.png | MIDS-W205/exercise_2/screenshots/ | A capture of the application running, showing the output of the words coming from the wordcount.py bolt. |  
 | screenshot-extract-results.png | MIDS-W205/exercise_2/screenshots/ | A capture of the output from histogram.py. |  
+| screenshot-extract-specificwords.png | MIDS-W205/exercise_2/screenshots/ | A capture of the output from final_results.py, providing a single word to search for. |  
 | Architecture.pdf | MIDS-W205/exercise_2/ | Further instructions and description of the application.
 
 
