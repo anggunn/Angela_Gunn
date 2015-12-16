@@ -60,7 +60,7 @@ def SeatPosition_to_String(tmpValue):
 	if tmpEvent in Middle: return 'Middle'
 	if tmpEvent in Right: return 'Right Side'
 	if tmpEvent in Other: return 'Other'
-	if tmpEvent in Sleeper: return 'Sleeper Secition of Cab'
+	if tmpEvent in Sleeper: return 'Sleeper Section of Cab'
 	if tmpEvent in Cargo: return 'Cargo Area'
 	if tmpEvent in Trailer: return 'Trailing Unit'
 	if tmpEvent in Exterior: return 'Riding on Vehicle Exterior'
@@ -89,7 +89,7 @@ def Restraint_to_String(tmpValue):
 	
 	if tmpEvent in Belt: return 'Belt Restraint'
 	if tmpEvent in NotApplicable: return 'Not Applicable'
-	if tmpEvent in NotUsed: return 'No Restraint used'
+	if tmpEvent in NotUsed: return 'No Restraint Used'
 	if tmpEvent in Child: return 'Child Restraint'
 	if tmpEvent in Helmet: return 'Helmet Used'
 	if tmpEvent in Other: return 'Other'

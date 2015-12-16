@@ -3,18 +3,56 @@ import sys
 import datetime
 import string
 
-#2012 Accident
+##2013 Vehicle
 
-
-#FUNCTION FirstHarm_to_String
+#FUNCTION BodyType_to_String
 #INPUT - the value from query
 #OUTPUT - string description
-def FirstHarm_to_String(tmpValue): 
+def BodyType_to_String(tmpValue):
 	try:
 		tmpEvent = int(tmpValue)
 	except:
 		tmpEvent = 100
 		
+	Automobile = [1,2,3,4,5,6,7,17,8,9]
+	Auto_Deriv = [10,11,12,13]
+	Utility = [14,15,16,19]
+	Van_Based = [20,21,22,28,29]
+	Light_Truck = [30,31,32,33,39]
+	Other_Light_Truck = [40,41,45,48,49]
+	Buses = [50,51,52,55,58,59]
+	Med_Heavy = [60,61,62,63,64,66,67,68,71,72,78,79]
+	Motor_Home = [42,65,73]
+	Motored_Cycle = [80,81,82,83,88,89,90]
+	Farm_Const = [92,93]
+	Other = [91,94,95,97]
+	unknown = [98,99,100]
+	
+	if tmpEvent in Automobile: return 'Automobile'
+	if tmpEvent in Auto_Deriv: return 'Automobile Derivative'
+	if tmpEvent in Utility: return 'Utility Vehicle'
+	if tmpEvent in Van_Based: return 'Van-Based Light Truck'
+	if tmpEvent in Light_Truck: return 'Light Conventional Truck (pickup style)'
+	if tmpEvent in Other_Light_Truck: return 'Other Light Truck'
+	if tmpEvent in Buses: return 'Bus'
+	if tmpEvent in Med_Heavy: return 'Medium or Heavy Trucks'
+	if tmpEvent in Motor_Home: return 'Motor Home'
+	if tmpEvent in Motored_Cycle: return 'Motored Cycles, Mopeds, All-Terrain Vehicle'
+	if tmpEvent in Farm_Const: return 'Farm or Construction Vehicle'
+	if tmpEvent in Other: return 'Other Vehicle'
+	if tmpEvent in unknown: return 'Unknown'
+		
+	return 'NA'
+#end BodyType_to_String
+
+#FUNCTION MostHarm_to_String
+#INPUT - the value from query
+#OUTPUT - string description
+def MostHarm_to_String(tmpValue):
+	try:
+		tmpEvent = int(tmpValue)
+	except:
+		tmpEvent = 100
 	
 	non_Collision = [1,2,3,4,51,44,7,16,6,72,73,5]
 	col_not_fixed = [8,9,10,11,49,15,18,14,45]
@@ -28,7 +66,117 @@ def FirstHarm_to_String(tmpValue):
 	if tmpEvent in col_VinTrans: return 'Collision - Vehicle in Transport'
 	if tmpEvent in unknown: return 'Unknown'
 	return 'NA'
-#end FirstHarm_to_String
+#end MostHarm_to_String
+
+
+
+#FUNCTION CriticalEvent_to_String
+#INPUT - the value from query
+#OUTPUT - string description
+def CriticalEvent_to_String(tmpValue):
+	try:
+		tmpEvent = int(tmpValue)
+	except:
+		tmpEvent = 100
+		
+	LossControl = [1,2,3,4,5,6,8,9]
+	Edge = [10,11,12,13,14]
+	Turning = [15,16]
+	Crossing = [17]
+	Decelerating = [18]
+	OtherInLane = [50,51,52,53,54,55,56,59]
+	OtherEncroaching = [60,61,62,63,64,65,66,67,68,70,71,72,73,74,78]
+	PedCycle = [80,81,82,83,84,85]
+	Animal = [87,88,89]
+	Object = [90,91,92]
+	Other = [19,98]
+	unknown = [99,100]
+	
+	if tmpEvent in LossControl: return 'Vehicle Loss of Control'
+	if tmpEvent in Edge: return 'Vehicle Travelling on Road Edge'
+	if tmpEvent in Turning: return 'Vehicle Turning at Junction'
+	if tmpEvent in Crossing: return 'Vehicle Crossing Intersection'
+	if tmpEvent in Decelerating: return 'Vehicle Decelerating'
+	if tmpEvent in OtherInLane: return 'Other Motor Vehicle in Lane'
+	if tmpEvent in OtherEncroaching: return 'Other Motor Vehicle Encroaching Into Lane'
+	if tmpEvent in PedCycle: return 'Pedestrian, Pedalcyclist  or Other Non-Motorist in Road'
+	if tmpEvent in Animal: return 'Animal in Road'
+	if tmpEvent in Object: return 'Object in Road'
+	if tmpEvent in Farm_Const: return 'Farm or Construction Vehicle'
+	if tmpEvent in Other: return 'Other Event'
+	if tmpEvent in unknown: return 'Unknown'
+		
+	return 'NA'
+#end CriticalEvent_to_String
+
+#FUNCTION AccidentCategory_to_String
+#INPUT - the value from query
+#OUTPUT - string description
+def AccidentCategory_to_String(tmpValue):
+	try:
+		tmpEvent = int(tmpValue)
+	except:
+		tmpEvent = 100
+	
+	noImpact = [0]
+	Single = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+	SameDirect = [20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49]
+	OppDirect = [50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67]
+	Changing = [68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85]
+	Intersecting = [86,87,88,89,90,91]
+	Misc = [92,93,97,98,99]
+	Unknown = [100]
+	
+	if tmpEvent in noImpact: return 'No Impact'
+	if tmpEvent in Single: return 'Single Driver'
+	if tmpEvent in SameDirect: return 'Same Trafficway, Same Direction'
+	if tmpEvent in OppDirect: return 'Same Trafficway, Opposite Direction'
+	if tmpEvent in Changing: return 'Changing Trafficway or Turning'
+	if tmpEvent in Intersecting: return 'Intersecting Paths (Vehicle Damage)'
+	if tmpEvent in Misc: return 'Miscellaneous'
+	if tmpEvent in Unknown: return 'Unknown'
+	return 'NA'
+#end AccidentCategory_to_String
+
+
+#FUNCTION AccidentType_to_String
+#INPUT - the value from query
+#OUTPUT - string description
+def AccidentType_to_String(tmpValue):
+	try:
+		tmpEvent = int(tmpValue)
+	except:
+		tmpEvent = 100
+		
+	NoImpact = [0]
+	Right = [1,2,3,4,5]
+	Left = [6,7,8,9,10]
+	Forward = [11,12,13,14,15,16, 34,35,36,37,3,39,40,41,42,43,54,55,56,57,58,59,60,61,62,63]
+	Rear = [20,21,22,23,24,25,26,27,28,29,30,31,32,33]
+	Sideswipe = [44,45,46,47,48,49,64,65,66,67]
+	Head = [50,51,52,53]
+	Turn_Across = [68,69,70,71,72,73,74,75]
+	Turn_Into = [76,77,78,79,80,81,82,83,84,85]
+	TBone = [86,87,88,89,90,91]
+	BackingOther = [92,93,97,98,99]
+	Unknown = [100]
+	
+	if tmpEvent in NoImpact: return 'No Impact'
+	if tmpEvent in Right: return 'Right Roadside Departure'
+	if tmpEvent in Left: return 'Left Roadside Departure'
+	if tmpEvent in Forward: return 'Forward Impact'
+	if tmpEvent in Rear: return 'Rear End'
+	if tmpEvent in Sideswipe: return 'Sideswipe or Angle'
+	if tmpEvent in Head: return 'Head-On'
+	if tmpEvent in Turn_Across: return 'Turn Across Path'
+	if tmpEvent in Turn_Into: return 'Turn Into Path'
+	if tmpEvent in TBone: return 'Straight Paths (T-Bone)'
+	if tmpEvent in BackingOther: return 'Backing or Other'
+	if tmpEvent in Unknown: return 'Unknown'
+		
+	return 'NA'
+#end AccidentType_to_String
+
 
 
 #MAIN CODE
@@ -37,155 +185,31 @@ for line in sys.stdin:
 	tokens = line.strip().split("\t")
 	#CaseNum
 	output.append(tokens[0])
-	#Year
+	#Vehicle Number
 	output.append(tokens[1])
-	#Month
-	Month2String = {'1': 'January',
-		'2': 'February',
-		'3': 'March',
-		'4': 'April',
-		'5': 'May',
-		'6': 'June',
-		'7': 'July',
-		'8': 'August',
-		'9': 'September',
-		'10': 'October',
-		'11': 'November',
-		'12': 'December'}
+	#Year
+	output.append(tokens[2])
+	#Num_Occupants	
+	output.append(tokens[3])
+	#Body_type
+	output.append(BodyType_to_String(tokens[4]))
+	#Mod_Year
+	output.append(tokens[5])
+	#Extent_Damage
+	Extent2String = {'0': 'No Damage',
+		'2': 'Minor Damage',
+		'4': 'Functional Damage',
+		'6': 'Disabling Damage',
+		'8': 'Unknown',
+		'9': 'Unknown'}
 	try:
-		output.append(Month2String[tokens[2]])
+		output.append(Extent2String[tokens[6]])
 	except:
-		output.append('NA')
-	#Day_Week
-	Day2String = {'1': 'Sunday',
-		'2': 'Monday',
-		'3': 'Tuesday',
-		'4': 'Wednesday',
-		'5': 'Thursday',
-		'6': 'Friday',
-		'7': 'Saturday'}
-	try:
-		output.append(Day2String[tokens[3]])
-	except:
-		output.append('NA')
-	#Hour
-	output.append(tokens[4])
-	#Region
-	Region2String = {'1': 'Northeast',
-		'2': 'Midwest',
-		'3': 'South',
-		'4': 'West'}
-	try:
-		output.append(Region2String[tokens[5]])
-	except:
-		output.append('NA')
-	#Num_Vehicles
-	output.append(tokens[6])
-	#Num_ParkWork
-	output.append(tokens[7])
-	#Persons_Ped
+		output.append('NA') 
+	#Most_Harm_Event
+	output.append(MostHarm_to_String(tokens[7]))
+	#Num_injury
 	output.append(tokens[8])
-	#Persons_NotTransit
-	output.append(tokens[9])
-	#Persons_Transit
-	output.append(tokens[10])
-	#First Harmful Event
-	output.append(FirstHarm_to_String(tokens[11]))
-	#Manner_Collision
-	ManColl2String = {'0': 'No Collision with a Vehicle in Transport',
-		'1': 'Front-to-Rear',
-		'2': 'Front-to-Front',
-		'10': 'Rear-to-Rear',
-		'6': 'Angle',
-		'7': 'Sideswipe - Same Direction',
-		'8': 'Sideswipe - Opposite Direction',
-		'9': 'Rear-to-Side',
-		'11': 'Other',
-		'99': 'Unknown',
-		'98': 'Unknown'}
-	try: 
-		output.append(ManColl2String[tokens[12]])
-	except:
-		output.append('NA')
-	#Within_Interchange
-	WithinInterchange2String = {'0': 'No',
-		'1': 'Yes',
-		'8': 'Unknown',
-		'9': 'Unknown'}
-	try:
-		output.append(WithinInterchange2String[tokens[13]])
-	except:
-		output.append('NA')
-	#Relation_to_Junction
-	RelationJunction2String = {'1': 'Non-Junction',
-		'2': 'Intersection',
-		'3': 'Intersection Related',
-		'4': 'Driveway Access',
-		'8': 'Driveway Access',
-		'5': 'Entrance or Exit Ramp Related',
-		'6': 'Railway Grade Crossing',
-		'7': 'Crossover Related',
-		'8': 'Driveway Access Related',
-		'16': 'Shared-Use Path or Trail',
-		'17': 'Acceleration or Deceleration Lane',
-		'18': 'Through Roadway',
-		'19': 'Other Location Within Interchange Area',
-		'98': 'Unknown',
-		'99': 'Unknown'}
-	try:
-		output.append(RelationJunction2String[tokens[14]])
-	except:
-		output.append('NA')
-	#Intersection_Type
-	IntersectionType2String = {'1': 'Not an Intersection',
-		'2': 'Four-Way',
-		'3': 'T-Intersection',
-		'4': 'Y-Intersection',
-		'5': 'Traffic Circle',
-		'6': 'Roundabout',
-		'7': 'Five-Point or More',
-		'8': 'Unknown',
-		'9': 'Unknown'}
-	try: 
-		output.append(IntersectionType2String[tokens[15]])
-	except:
-		output.append('NA')
-	#Work_Zone
-	WorkZone2String = {'0': 'No',
-		'1': 'Yes',
-		'2': 'Yes',
-		'3': 'Yes',
-		'4': 'Yes'}
-	try:
-		output.append(WorkZone2String[tokens[16]])
-	except:
-		output.append('NA')
-	#Weather 1-3
-	Weather2String = {'0': 'No Additional Conditions',
-		'1': 'Clear',
-		'2': 'Rain',
-		'3': 'Sleet or Hail',
-		'4': 'Snow',
-		'5': 'Fog or Smog or Smoke',
-		'6': 'Severe Crosswinds',
-		'7': 'Blowing Dirt',
-		'8': 'Other',
-		'10': 'Cloudy',
-		'11': 'Blowing Snow',
-		'98': 'Unknown',
-		'99': 'Unknown'}
-	try:
-		output.append(Weather2String[tokens[17]])
-	except:
-		output.append('NA')
-	try:
-		output.append(Weather2String[tokens[18]])
-	except:
-		output.append('NA')
-	try:
-		output.append(Weather2String[tokens[19]])
-	except:
-		output.append('NA')
 	#Max_Injury
 	MaxInjury2String = {'4': '01 Fatal',
 		'3': '02 Incapacitating',
@@ -197,23 +221,63 @@ for line in sys.stdin:
 		'9': '08 Unknown if Injured',
 		'8': '09 No Person Involved'}
 	try:
-		output.append(MaxInjury2String[tokens[20]])
+		output.append(MaxInjury2String[tokens[9]])
 	except:
 		output.append('NA')
-	#Num_Injury
-	output.append(tokens[21])
-
-	#Alcohol_Involved
-	Alcohol2String = {'1': 'Yes - Alchohol Involved',
-		'2': 'No - No Alchohol Involved',
-		'8': 'No - Not Applicable',
+	#Driver Drinking
+	Drinking2String = {'1': 'Alchohol Involved',
+		'2': 'No Alcohol Involved',
+		'8': 'No Driver Present',
 		'9': 'Unknown'}
 	try:
-		output.append(Alcohol2String[tokens[22]])
+		output.append(Drinking2String[tokens[10]])
 	except:
-		output.append('NA')
+		output.append('NA') 
+	#Speeding
+	Speeding2String = {'0': 'No',
+		'2': 'Yes',
+		'3': 'Yes',
+		'4': 'Yes',
+		'5': 'Yes',
+		'8': 'No Driver Present',
+		'9': 'Unknown'}
+	try:
+		output.append(Speeding2String[tokens[11]])
+	except:
+		output.append('NA') 	
+	#travel speed
+	output.append(tokens[12])
+	#Pre-Event Movement
+	PreMove2String ={'0': 'No Driver Present',
+		'1': 'Going Straight',
+		'2': 'Decelerating in Road',
+		'3': 'Accelerating in Road',
+		'4': 'Starting in Travel Lane',
+		'5': 'Stopped in Road',
+		'6': 'Passing or Overtaking Another Vehicle',
+		'7': 'Disabled or Parked in Travel Lane',
+		'8': 'Leaving a Parking Position',
+		'9': 'Entering a Parking Position',
+		'10': 'Turning Right',
+		'11': 'Turning Left',
+		'12': 'Making a U-turn',
+		'13': 'Backing Up',
+		'14': 'Negotiating a Curve',
+		'15': 'Changing Lanes',
+		'16': 'Merging',
+		'17': 'Successful Corrective Action to Previous Critical Event',
+		'98': 'Other',
+		'99': 'Unknown'}
+	try:
+		output.append(PreMove2String[tokens[13]])
+	except:
+		output.append('NA') 
+	#Critical_Event_Precrash
+	output.append(CriticalEvent_to_String(tokens[14]))
+	#Accident Category and Type
+	#same token used for both
+	output.append(AccidentCategory_to_String(tokens[15]))
+	output.append(AccidentType_to_String(tokens[15]))
 	
 	
 	print("\t".join(output))
-
-

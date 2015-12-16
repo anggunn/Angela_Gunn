@@ -56,7 +56,7 @@ add file hdfs:///user/w205/accident_project/pyscripts/2002Accident.py;
 
 insert into table accident PARTITION (year = '2013')
 select TRANSFORM(
-CaseNum, 2013, month, Day_Week, Hour, Region, Ve_Total, ve_Forms, 
+CaseNum, 2013, month, Day_Week, Hour, Region, Ve_Forms, PVH_INVL, 
 Peds, PerNotMVIT, PERMVIT, Harm_EV, MAN_COLL,
 RelJct1, RelJct2, Typ_Int,Wrk_Zone,
 Weather, Weather1, Weather2,
@@ -92,7 +92,7 @@ FROM accident_project.accident_2013;
 
 insert into table accident PARTITION (year = '2012')
 select TRANSFORM(
-CaseNum, 2012, month, Day_Week, Hour, Region, Ve_Total, ve_Forms, 
+CaseNum, 2012, month, Day_Week, Hour, Region, Ve_Forms, PVH_INVL, 
 Peds, PerNotMVIT, PERMVIT, Harm_EV, MAN_COLL,
 RelJct1, RelJct2, Typ_Int,Wrk_Zone,
 Weather, Weather1, Weather2,
@@ -127,7 +127,7 @@ FROM accident_project.accident_2012;
 
 insert into table accident PARTITION (year = '2011')
 select TRANSFORM(
-CaseNum, 2011, month, Day_Week, Hour, Region, Ve_Total, ve_Forms, 
+CaseNum, 2011, month, Day_Week, Hour, Region, Ve_Forms, PVH_INVL, 
 Peds, PerNotMVIT, PERMVIT, Harm_EV, MAN_COLL,
 RelJct1, RelJct2, Typ_Int,Wrk_Zone,
 Weather, Weather1, Weather2,
@@ -162,7 +162,7 @@ FROM accident_project.accident_2011;
 
 insert into table accident PARTITION (year = '2010')
 select TRANSFORM(
-CaseNum, 2010, month, Day_Week, Hour, Region, 999, veh_invl, 
+CaseNum, 2010, month, Day_Week, Hour, Region, VEH_INVL, PVH_INVL, 
 999, non_invl, 999, Event1, MAN_COL,
 RelJct1, RelJct2, Typ_Int,Wrk_Zone,
 Weather, Weather1, Weather2,
@@ -198,7 +198,7 @@ FROM accident_project.accident_2010;
 
 insert into table accident PARTITION (year = '2009')
 select TRANSFORM(
-CaseNum, 2009, month, Day_Week, Hour, Region, 999, veh_invl, 
+CaseNum, 2009, month, Day_Week, Hour, Region, VEH_INVL, PVH_INVL, 
 999, non_invl, 999, Event1, MAN_COL,
 9, Rel_Jct, 9,Wrk_Zone,
 Weather, 
@@ -232,7 +232,7 @@ FROM accident_project.accident_2009;
 
 insert into table accident PARTITION (year = '2008')
 select TRANSFORM(
-CaseNum, 2008, month, weekday, Hour, Region, 999, veh_invl, 
+CaseNum, 2008, month, weekday, Hour, Region, VEH_INVL, PVH_INVL, 
 999, non_invl, 999, Event1, MAN_COL,
 9, Rel_Jct, 9,Wrk_Zone,
 Weather, 
@@ -267,7 +267,7 @@ FROM accident_project.accident_2008;
 
 insert into table accident PARTITION (year = '2007')
 select TRANSFORM(
-CaseNum, 2007, month, weekday, Hour, Region, 999, veh_invl, 
+CaseNum, 2007, month, weekday, Hour, Region, VEH_INVL, PVH_INVL, 
 999, non_invl, 999, Event1, MAN_COL,
 9, Rel_Jct, 9,Wrk_Zone,
 Weather, 
@@ -302,7 +302,7 @@ FROM accident_project.accident_2007;
 
 insert into table accident PARTITION (year = '2006')
 select TRANSFORM(
-CaseNum, 2006, month, weekday, Hour, Region, 999, veh_invl, 
+CaseNum, 2006, month, weekday, Hour, Region, VEH_INVL, PVH_INVL, 
 999, non_invl, 999, Event1, MAN_COL,
 9, Rel_Jct, 9,Wrk_Zone,
 Weather, 
@@ -337,7 +337,7 @@ FROM accident_project.accident_2006;
 
 insert into table accident PARTITION (year = '2005')
 select TRANSFORM(
-CaseNum, 2005, month, weekday, Hour, Region, 999, veh_invl, 
+CaseNum, 2005, month, weekday, Hour, Region, VEH_INVL, PVH_INVL, 
 999, non_invl, 999, Event1, MAN_COL,
 9, Rel_Jct, 9,Wrk_Zone,
 Weather, 
@@ -372,7 +372,7 @@ FROM accident_project.accident_2005;
 
 insert into table accident PARTITION (year = '2004')
 select TRANSFORM(
-CaseNum, 2004, month, weekday, Hour, Region, 999, veh_invl, 
+CaseNum, 2004, month, weekday, Hour, Region, VEH_INVL, 999, 
 999, non_invl, 999, Event1, MAN_COL,
 9, Rel_Jct, 9,Wrk_Zone,
 Weather, 
@@ -407,7 +407,7 @@ FROM accident_project.accident_2004;
 
 insert into table accident PARTITION (year = '2003')
 select TRANSFORM(
-CaseNum, 2003, month, weekday, Hour, Region, 999, veh_invl, 
+CaseNum, 2003, month, weekday, Hour, Region, VEH_INVL, 999, 
 999, non_invl, 999, Event1, MAN_COL,
 9, Rel_Jct, 9,Wrk_Zone,
 Weather, 
@@ -442,7 +442,7 @@ FROM accident_project.accident_2003;
 
 insert into table accident PARTITION (year = '2002')
 select TRANSFORM(
-CaseNum, 2002, month, weekday, Hour, Region, 999, veh_invl, 
+CaseNum, 2002, month, weekday, Hour, Region, VEH_INVL, 999, 
 999, non_invl, 999, Event1, MAN_COL,
 9, Rel_Jct, 9,Wrk_Zone,
 Weather, 
