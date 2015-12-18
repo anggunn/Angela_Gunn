@@ -18,8 +18,7 @@ $ pip install numpy
 $ pip install matplotlib**
 
 ## Steps to run the application:
-1) Clone Github Repository from **https://github.com/anggunn/MIDSW205.
-git** 
+1) Clone Github Repository from **https://github.com/anggunn/MIDSW205.git** 
 The files you want are in the **MIDS-W205/205project/** directory.
 2) Make sure python 2.7 is the default python version.
 4) Ensure all required libraries are installed: pandas, numpy, matplotlib
