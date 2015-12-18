@@ -35,4 +35,6 @@ Once the script is completed, you can navigate to the query_scripts directory an
 
 Note the query scripts are written with pyspark, and such need to be excuted with pyspark-submit.
 
+**BONUS FILE**  
+If you should ever need it, I included a script for dropping the HIVE database created from this project.
 
