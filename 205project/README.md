@@ -1,5 +1,4 @@
-# Angela Gunn
-# Accident Project
+# Accident Project (Angela Gunn)
 
 ## Environment Requirements:
 This project installation has been tested with the following configurations:
