@@ -101,7 +101,8 @@ hdfs dfs -put transforming/2002Person.py /user/w205/accident_project/pyscripts
 hdfs dfs -put transforming/2002Vehicle.py /user/w205/accident_project/pyscripts
 
 
-#hive -f transforming/hive_target_accident.sql
-#hive -f transforming/hive_target_distract.sql
-#hive -f transforming/hive_target_person.sql
-#hive -f transforming/hive_target_vehicle.sql
+hive -f transforming/hive_target_accident.sql
+hive -f transforming/hive_target_distract.sql
+hive -f transforming/hive_target_person.sql
+hive -f transforming/hive_target_vehicle.sql
+hive -f transforming/hive_views.sql
