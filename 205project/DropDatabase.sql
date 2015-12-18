@@ -1,3 +1,5 @@
+--This script will drop all tables in accident_project, then the database itself.
+
 use accident_project; 
 
 drop table accident;
