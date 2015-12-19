@@ -20,14 +20,16 @@ Required libraries may be installed with the below commands:
 
 ## Steps to run the application:
 1) Clone Github Repository from **https://github.com/anggunn/MIDSW205.git**  
+
+    git clone https://anggunn:j6uKY8iL0g@github.com/anggunn/MIDS-W205.git
+
 The files you want are in the **MIDS-W205/205project/** directory.  
 2) Make sure python 2.7 is the default python version.  
 4) Ensure all required libraries are installed: pandas, numpy, matplotlib  
 5) Navigate to the 205project directory  
-6) Run the following commands:  
+6) Run the following command:  
 
-    $ chmod 755 start_up.sh    
-    $ ./start_up.sh
+    $ bash start_up.sh
 
 This script takes about 30 minute to run.  
 
