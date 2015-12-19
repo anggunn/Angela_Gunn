@@ -31,14 +31,18 @@ if __name__ == '__main__':
 	strFileName = strTable + "_" + strField
 	
 	
-	if arguments[2].isdigit(): 
-		strYear = arguments[2]
-		strTitle = strTitle + " (" + strYear + ")"
-		strFileName = strFileName + "_" + strYear + ".png"
-	else:
-		strYear = ""
-		strTitle = strTitle + " (All Years) "
-		strFileName = strFileName + "_All.png"
+	strYear = ""
+	if len(arguments) == 3: #there is a year	given
+		if arguments[2].isdigit():
+				strYear = arguments[2]
+				strTitle = strTitle + " (" + strYear + ")"
+				strFileName = strFileName + "_" + strYear + ".png"
+		else:
+				strYear = ""
+				strTitle = strTitle + " (All Years) "
+				strFileName = strFileName + "_All.png"
+
+
 		
 	strSelect = "SELECT " + strField + ", count(*) as count FROM " + strTable
 	
@@ -71,7 +75,7 @@ if __name__ == '__main__':
 	fig, ax = plt.subplots()
 	rects1 = ax.bar(ind, y, width, color='blue', edgecolor = "none")
 
-	
+	fig.subplots_adjust(bottom=0.2)
 	ax.set_title(strTitle)
 	ax.set_xticks(ind + width)
 
@@ -82,7 +86,7 @@ if __name__ == '__main__':
 	ax.spines['left'].set_visible(False)
 
 	# set the the x-axis labels 
-	ax.set_xticklabels(x)
+	ax.set_xticklabels(x, rotation=45)
 
 	plt.tick_params(
 	   axis='x',          # changes apply to the x-axis

@@ -48,6 +48,7 @@ if __name__ == '__main__':
 			
 			pdf.loc[pdf['year'] == y, 'percent_change'] =  difference
 			
+	pdf.year = pd.to_datetime("1" + "1" + pdf.year, format='%d%m%Y') #to change year to date format
 
 	with open("distract_accidents_time.csv",'w') as f:
 		pdf.to_csv(f, header = True, index = False)

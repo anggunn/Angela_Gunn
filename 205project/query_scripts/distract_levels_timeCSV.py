@@ -21,41 +21,46 @@ if __name__ == '__main__':
 	df_factor = sqlContext.sql(strSQL_factor)
 	df_all = sqlContext.sql(strSQL_all)
 
-	df = df_factor.join(df_all,'year')
+	df = df_factor.join(df_all, 'year')
+
 	
 	#to panda data frame
 	pdf = df.toPandas()
 	
 	#Add  some counts and percentages.
 		
-	first = True
 
-	years = pdf['year'].unique()
+	years = np.sort(pdf['year'].unique())
+	print years
 	factors = pdf['factor'].unique()
 
 
 	for f in factors:
 		first = True
 		for y in years:
-			#print pdf.loc[(pdf['year'] == y) & (pdf['factor'] == f)]
 
 			if first:
 				previous = pdf.loc[(pdf['year'] == y) & (pdf['factor'] == f), 'factor_count']
-				pdf.loc[(pdf['year'] == y) & (pdf['factor'] == f), 'percent_all_factors_year'] = 1.0 * pdf.loc[(pdf['year'] == y) & (pdf['factor'] == f), 'factor_count'] / pdf.loc[(pdf['year'] == y) & (pdf['factor'] == f), 'year_all_factor_count']
+				pdf.loc[(pdf['year'] == y) & (pdf['factor'] == f), 'percent_all_factors_year'] = 100.0 * pdf.loc[(pdf['year'] == y) & (pdf['factor'] == f), 'factor_count'] / pdf.loc[(pdf['year'] == y) & (pdf['factor'] == f), 'year_all_factor_count']
 				pdf.loc[(pdf['year'] == y) & (pdf['factor'] == f), 'percent_change'] = 0
+				previous = pdf.loc[(pdf['year'] == y) & (pdf['factor'] == f), 'percent_all_factors_year']
+
 				first = False
 			else:
-				current = pdf.loc[(pdf['year'] == y) & (pdf['factor'] == f), 'factor_count']
-				difference = float(current) - float(previous) * 1.0
 		
-				previous = current
-				pdf.loc[(pdf['year'] == y) & (pdf['factor'] == f), 'percent_all_factors_year'] = 1.0 * pdf.loc[(pdf['year'] == y) & (pdf['factor'] == f), 'factor_count'] / pdf.loc[(pdf['year'] == y) & (pdf['factor'] == f), 'year_all_factor_count']
+				pdf.loc[(pdf['year'] == y) & (pdf['factor'] == f), 'percent_all_factors_year'] = 100.0 * pdf.loc[(pdf['year'] == y) & (pdf['factor'] == f), 'factor_count'] / pdf.loc[(pdf['year'] == y) & (pdf['factor'] == f), 'year_all_factor_count']
+
+				current = pdf.loc[(pdf['year'] == y) & (pdf['factor'] == f), 'percent_all_factors_year']
+                                difference = float(current) - float(previous) * 1.0
+
+                                previous = current
+
+
 				pdf.loc[(pdf['year'] == y) & (pdf['factor'] == f), 'percent_change'] = difference
-					
-	print str(pdf['year']) + '/01/01'
-	pdf['year'] = pd.to_datetime(str(pdf['year']) + '/01/01')
+
+
+	pdf.year = pd.to_datetime("1" + "1" + pdf.year, format='%d%m%Y') #to change year to date format
 	pdf.columns = ['year', 'factor', 'factor_count', 'year_all_factor_count','year_percent_all_factors', 'percent_change']
-	print pdf
-	
+
 	with open("distract_levels_time.csv",'w') as f:
 		pdf.to_csv(f, header = True, index = False)
