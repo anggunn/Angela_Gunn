@@ -37,6 +37,7 @@ Once the script is completed, you can navigate to the query_scripts directory an
 
 Note the query scripts are written with pyspark, and such need to be excuted with pyspark-submit.
 
-**BONUS FILE**  
+**BONUS FILES**  
 If you should ever need it, I included a script for dropping the HIVE database created from this project.
+Also, I included my files from the Tableau visualizations, but I don't know if they will work on another computer or not.
 
