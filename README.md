@@ -1,5 +1,5 @@
-# MIDS-W205
- MIDS W205 
+# Angela Gunn
+Sample Work
 
 This is a collection of the projects completed for MIDS W205 https://datascience.berkeley.edu/academics/curriculum/fundamentals-of-data-engineering/
 
