@@ -1,8 +1,14 @@
 # MIDS-W205
- MIDS W205
+ MIDS W205 
 
-This is a collection of the projects completed for MIDS W205.
+This is a collection of the projects completed for MIDS W205 https://datascience.berkeley.edu/academics/curriculum/fundamentals-of-data-engineering/
 
 The folders within are appropriately named for their specific project.
 
-https://github.com/anggunn/MIDS-W205/tree/d1c5c660afce68cf9b63e20ea53ee3c8e37efeb1/205project
+The 205 Project folder is the main project from the course, and highlights the following skills:
+* SQL
+* Hive
+* SPARK-SQL
+* Tableau
+* Presentation of Data
+* Documentation Skills
